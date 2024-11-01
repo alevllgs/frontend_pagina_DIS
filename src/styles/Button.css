@@ -1,0 +1,46 @@
+/* src/styles/Button.css */
+
+/* Estilos para el grupo de botones */
+.buttons {
+    display: flex; /* Cambiado a flex para mantener alineación adaptable */
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espaciado entre botones */
+    padding: 20px;
+  }
+  
+  /* Estilos para cada botón individual */
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-color: #d4d4d465;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    padding-top: 2%;
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0;
+
+  }
+  
+  /* Estilos para el ícono dentro del botón */
+  .icon {
+    font-size:50px; /* Tamaño de los íconos */
+    color: #007bff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  /* Estilos para el título del botón */
+  .title {
+    margin-bottom: 2%;
+    font-size: 16px;
+    font-weight: bold;
+  }
