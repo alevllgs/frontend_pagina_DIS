@@ -2,29 +2,26 @@
 
 /* Contenedor del banner */
 .banner-container {
-    position: relative;
+    position: relative; /* Mantenemos el banner en el flujo normal */
     width: 100%;
-    height: 400px;
-    overflow: hidden;
-
+    height: 300px; /* Altura del banner */
+    overflow: hidden; /* Evita que el contenido se desborde */
   }
   
   /* Imagen del banner */
   .banner-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    padding: 0%;
-    margin: 0%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor del banner */
   }
   
   /* Logo que flota sobre el banner */
   .banner-logo {
     position: absolute;
     top: 20px;
-    left: 20px; /* Mover el logo a la esquina superior izquierda */
-    width: 150px; /* Hacer el logo más grande */
+    left: 20px; /* Ubicar el logo en la esquina superior izquierda */
+    width: 150px;
     height: auto;
-    z-index: 10;
+    z-index: 2; /* Asegura que el logo esté visible solo en el contexto del banner */
   }
   

@@ -1,0 +1,8 @@
+/* Supongamos que tu Navbar tiene una clase llamada `.navbar` */
+.navbar {
+    position: relative; /* Esto asegura que el navbar se mantenga sobre otros elementos relativos */
+    z-index: 1; /* Debe ser mayor que el del banner para que se mantenga visible sobre él */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente opcional para darle más estilo */
+  }
+  

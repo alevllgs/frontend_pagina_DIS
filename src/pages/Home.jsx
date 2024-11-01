@@ -1,17 +1,18 @@
-import React from "react";
+import React from "react"
 import CreaBanner from "../components/CreaBanner"; // Importar CreaBanner
 import ButtonGroup from "../components/ButtonGroup"; // Importar ButtonGroup
+import "../styles/Home.css"; // Archivo CSS para estilos adicionales
 
 const Home = () => {
   return (
-    <div>
-     
+    <div className="home-container">
+
 
       {/* Banner */}
       <CreaBanner /> {/* Añadir el componente CreaBanner */}
 
       {/* Cuerpo */}
-      <div className="cuerpo" style={{ padding: "20px" }}>
+      <div className="cuerpo">
         <h2>Sobre Nosotros</h2>
         <p>Esta es la sección principal de nuestra página donde describimos quiénes somos y qué hacemos.</p>
 
@@ -23,7 +24,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer" style={{ background: "#333", color: "#fff", padding: "10px", textAlign: "center" }}>
+      <footer className="footer">
         <p>&copy; 2024 Nuestra Compañía. Todos los derechos reservados.</p>
       </footer>
     </div>
