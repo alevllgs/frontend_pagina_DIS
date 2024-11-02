@@ -1,8 +1,147 @@
-/* Supongamos que tu Navbar tiene una clase llamada `.navbar` */
+/* src/styles/Navbar.css */
+
+/* Estilo del navbar */
 .navbar {
-    position: relative; /* Esto asegura que el navbar se mantenga sobre otros elementos relativos */
-    z-index: 1; /* Debe ser mayor que el del banner para que se mantenga visible sobre él */
+    position: sticky; /* Fija el navbar en la parte superior al desplazarse */
+    top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente opcional para darle más estilo */
-  }
-  
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0); /* Fondo transparente por defecto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Transición suave para cambios de fondo */
+}
+
+/* Fondo celeste cuando no estamos en Home o al hacer scroll */
+.navbar.scrolled {
+    background: #04759b; /* Fondo celeste cuando se está en una página distinta del Home o al hacer scroll */
+}
+
+/* Contenedor del contenido del navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Logo del navbar */
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 5%;
+}
+
+/* Enlaces del navbar */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo al pasar el cursor sobre los enlaces */
+.navbar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Estilo para el enlace activo */
+.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Contenedor del buscador */
+.navbar-search {
+    display: flex;
+    align-items: center; /* Alineación centrada */
+    margin-left: auto; /* Alinea el buscador a la derecha */
+}
+
+/* Estilo del campo de búsqueda */
+.search-input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* Botón de búsqueda */
+.search-button {
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: auto;
+}
+
+/* Estilo al pasar el cursor sobre el botón de búsqueda */
+.search-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Vista celular (responsive) */
+@media (max-width: 768px) {
+    .navbar {
+        background: #04759b; /* Fondo celeste en vista celular */
+        flex-direction: column; /* Poner el contenido del navbar en columna */
+        padding: 10px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar-logo {
+        display: none; /* Ocultar el logo en vista celular */
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar-links a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar-search {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-input {
+        width: calc(100% - 50px);
+        flex: 1;
+    }
+
+    .banner-container {
+        display: none; /* Ocultar el banner en vista celular */
+    }
+}
+

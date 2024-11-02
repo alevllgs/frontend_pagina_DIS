@@ -12,7 +12,7 @@ const ButtonGroup = () => {
       <Button href="mortalidad_natalidad/" icon="fa-heartbeat" title="Mortalidad / Natalidad" delay="400" iconColor="#6c757d" />
       <Button href="inmunizaciones/" icon="fa-syringe" title="R.N.I" delay="500" iconColor="#C8A2D5" />
       <Button href="prest_centinelas/" icon="fa-user-md" title="Prestaciones" delay="600" iconColor="#17a2b8" />
-      <Button href="publicaciones/" icon="fa-book" title="Publicaciones" delay="700" iconColor="#fd7e14" />
+      <Button href="https://app.powerbi.com/view?r=eyJrIjoiM2ZjNGI1ODQtODMwOS00NmI4LWE4ODAtMmZiMjk5NDNkZjI3IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9" icon="fa-money-check-dollar" title="Gestión Clínica-Finaniera" delay="700" iconColor="#fd7e14" />
       <Button href="at_urgencia/" icon="fa-ambulance" title="Atenciones de Urgencia" delay="800" iconColor="#ff6b6b" />
       <Button href="monitoreo_metas/" icon="fa-chart-pie" title="Monitoreo de Metas" delay="900" iconColor="#20c997" />
       <Button href="red_asistencial/" icon="fa-h-square" title="Red Asistencial" delay="1000" iconColor="#6f42c1" />
