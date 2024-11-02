@@ -25,7 +25,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2024 Nuestra Compañía. Todos los derechos reservados.</p>
+        <p>&copy; Servicio de Salud Metropolitano Oriente, Subdirección de Gestión Asistencial, Departamento de Información Sanitaria.</p>
       </footer>
     </div>
   );
