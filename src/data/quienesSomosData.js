@@ -4,7 +4,7 @@ const quienesSomosData = [
       id: 1,
       title: 'Gatito 1',
       text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-      imgSrc: 'https://via.placeholder.com/150x150?text=Image+1',
+      imgSrc: 'src/img/QuienesSomos/gato1.jpg',
       listItems: ['Cras justo odio', 'Dapibus ac facilisis in', 'Vestibulum at eros'],
       links: ['#', '#']
     },
@@ -12,7 +12,7 @@ const quienesSomosData = [
       id: 2,
       title: 'Gatito 2',
       text: 'Another quick example text.',
-      imgSrc: 'https://via.placeholder.com/150x150?text=Image+2',
+      imgSrc: 'src/img/QuienesSomos/gato2.jpg',
       listItems: ['Lorem ipsum', 'Dolor sit amet', 'Consectetur adipiscing elit'],
       links: ['#', '#']
     },
