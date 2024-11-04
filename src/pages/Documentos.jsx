@@ -1,6 +1,9 @@
+import Footer from '../components/Footer';
+
+
 const Documentos = () => {
   return (
-    <div>
+    <div className='page-container'>
       <h1>Documentos</h1>
       <ul>
         <li>Documento 1 - Introducción a React</li>
@@ -9,6 +12,7 @@ const Documentos = () => {
         <li>Documento 4 - Rutas protegidas en React</li>
         <li>Documento 5 - Manejo de Estados en React</li>
       </ul>
+      <Footer />
     </div>
   );
 };

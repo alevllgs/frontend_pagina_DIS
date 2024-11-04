@@ -2,6 +2,8 @@ import React from "react"
 import CreaBanner from "../components/CreaBanner"; // Importar CreaBanner
 import ButtonGroup from "../components/ButtonGroup"; // Importar ButtonGroup
 import "../styles/Home.css"; // Archivo CSS para estilos adicionales
+import Footer from '../components/Footer';
+
 
 const Home = () => {
   return (
@@ -24,9 +26,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
-        <p>&copy; Servicio de Salud Metropolitano Oriente, Subdirección de Gestión Asistencial, Departamento de Información Sanitaria.</p>
-      </footer>
+      <Footer />
     </div>
   );
 };

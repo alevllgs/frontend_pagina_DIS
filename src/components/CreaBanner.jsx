@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "../styles/CreaBanner.css"; // Asegúrate de tener este archivo CSS para los estilos
 
 const banners = [
-  "/img/banner1.jpg",
-  "/img/banner2.jpg",
-  "/img/banner3.jpg",
-  "/img/banner4.jpg"
+  "public/img/banner/banner1.jpg",
+  "public/img/banner/banner2.jpg",
+  "public/img/banner/banner3.jpg",
+  "public/img/banner/banner4.jpg"
 ];
-const logo = "/img/logo_salud_oriente.png";
+const logo = "public/img/banner/logo_salud_oriente.png";
 
 const CreaBanner = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);

@@ -1,0 +1,67 @@
+/* src/styles/CardComponent.css */
+
+.card-item {
+    width: 18rem;
+    border: 1px solid #e0e0e0; /* Añadir un borde alrededor de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* Fondo blanco */
+  }
+  
+  .card-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 250px; /* Mantener la imagen cuadrada */
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .list-group-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+  }
+  
+  .card-links {
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .card-link {
+    margin-right: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card-link:hover {
+    text-decoration: underline;
+  }
+  
