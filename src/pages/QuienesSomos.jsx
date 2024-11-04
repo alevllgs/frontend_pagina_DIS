@@ -11,7 +11,6 @@ function QuienesSomos() {
     <div className='texto_quienes_somos'>
     <h2>Sobre Nosotros</h2>
         <p>Esta es la sección principal de nuestra página donde describimos quiénes somos y qué hacemos.</p>
-
         <h2>Nuestros Servicios</h2>
         <p>Detalles sobre nuestros servicios...</p>
     </div>

@@ -1,46 +1,68 @@
-/* src/styles/Button.css */
+/* Asegúrate de tener importada la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* Estilos para el grupo de botones */
 .buttons {
-    display: flex; /* Cambiado a flex para mantener alineación adaptable */
-    flex-wrap: wrap;
-    justify-content: center; /* Centra los botones */
+  display: grid; /* Usar Grid para organizar botones en filas */
+  grid-template-columns: repeat(5, 1fr); /* Mostrar 5 botones por fila */
+  gap: 30px; /* Espaciado entre botones */
+  padding: 20px;
+  justify-items: center; /* Centrar los botones dentro de cada celda */
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* Estilos para cada botón individual */
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribuir los elementos (icono y texto) con espacio entre ellos */
+  text-align: center;
+  background: linear-gradient(135deg, #6f86d6, #48c6ef); /* Fondo degradado */
+  border-radius: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Añadir transición para escala y cambio de fondo */
+  width: 150px;
+  height: 180px; /* Añadir altura fija para los botones */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: #ffffff; /* Cambiar color del texto */
+  padding: 20px;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+/* Estilo para el hover de los botones */
+.button:hover {
+  background: linear-gradient(135deg, #48c6ef, #6f86d6); /* Cambiar el degradado al pasar el mouse */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el mouse */
+}
+
+/* Estilos para el ícono dentro del botón */
+.icon {
+  font-size: 65px; /* Tamaño más grande de los íconos */
+  color: #ffffff; /* Cambiar color del ícono */
+  margin-bottom: 20px; /* Añadir más espacio debajo del ícono para ajustar la posición del texto */
+}
+
+/* Estilos para el título del botón */
+.title {
+  margin-top: auto; /* Asegurar que el título se quede al fondo del botón */
+  font-size: 15px; /* Reducir el tamaño de la letra */
+  font-weight: 600; /* Hacer la letra más gruesa */
+}
+
+/* Vista celular (responsive) */
+@media (max-width: 768px) {
+  .buttons {
+    grid-template-columns: repeat(2, 1fr); /* Mostrar 2 botones por fila en pantallas pequeñas */
+    margin-left: 5%;
+    margin-right: 5%;
     gap: 20px; /* Espaciado entre botones */
-    padding: 20px;
+    padding: 10px;
   }
-  
-  /* Estilos para cada botón individual */
+
   .button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    background-color: #d4d4d465;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    width: 150px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    color: #333;
-    padding-top: 2%;
+    width: 85%; /* Hacer que los botones ocupen todo el ancho disponible */
   }
-  
-  .button:hover {
-    background-color: #e0e0e0;
-
-  }
-  
-  /* Estilos para el ícono dentro del botón */
-  .icon {
-    font-size:50px; /* Tamaño de los íconos */
-    color: #007bff;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  
-  /* Estilos para el título del botón */
-  .title {
-    margin-bottom: 2%;
-    font-size: 16px;
-    font-weight: bold;
-  }
+}
