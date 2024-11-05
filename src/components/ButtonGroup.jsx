@@ -4,7 +4,8 @@ import colorPalettes from '../styles/colors'; // Importar la lista de paletas de
 import '../styles/Button.css'; // Estilo de botones
 
 // Puedes definir qué paleta usar, por ejemplo, la Paleta 1.
-const palette = colorPalettes[0]; // Cambia el índice para usar una paleta diferente
+const paleta = Math.floor(Math.random() * colorPalettes.length) // Cambia el índice para usar una paleta diferente
+const palette = colorPalettes[paleta]; 
 
 const ButtonGroup = () => {
   return (
