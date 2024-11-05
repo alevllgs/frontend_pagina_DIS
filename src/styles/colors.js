@@ -13,7 +13,9 @@ const colorPalettes = [
     // Paleta 6: Colores muy saturados para alta visibilidad
     ["#ff6b6b", "#4ecdc4", "#1a535c", "#ff9f1c", "#2ec4b6"],
     // Paleta 7: Contrastes fuertes en colores cálidos y fríos
-    ["#ffb703", "#023047", "#fb8500", "#219ebc", "#8ecae6"]
+    ["#ffb703", "#023047", "#fb8500", "#219ebc", "#8ecae6"],
+    // Paleta 8: azul amarillo y rojo
+    ["#0A0F35", "#1044A7", "#578BDE", "#DFAF1D", "#BB1A2C"]
 
 ];
 
