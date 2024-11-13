@@ -1,17 +1,30 @@
-import React from "react"
-import CreaBanner from "../components/CreaBanner"; // Importar CreaBanner
-import ButtonGroup from "../components/ButtonGroup"; // Importar ButtonGroup
-import "../styles/Home.css"; // Archivo CSS para estilos adicionales
-import Footer from '../components/Footer';
-
+import React, { useState } from "react";
+import CreaBanner from "../components/CreaBanner";
+import ButtonGroup from "../components/ButtonGroup";
+import Footer from "../components/Footer";
+import Notification from "../components/Notification";
+import "../styles/Home.css";
 
 const Home = () => {
+  const [showNotification, setShowNotification] = useState(true);
+
+  const handleCloseNotification = () => {
+    setShowNotification(false);
+  };
+
   return (
     <div className="home-container">
-
+      {/* Mostrar notificación si está activa */}
+      {showNotification && (
+        <Notification
+          message="¡Bienvenido a nuestra página! Explora nuestros servicios."
+          type="info"
+          onClose={handleCloseNotification}
+        />
+      )}
 
       {/* Banner */}
-      <CreaBanner /> {/* Añadir el componente CreaBanner */}
+      <CreaBanner />
 
       {/* Cuerpo */}
       <div className="cuerpo">
@@ -22,7 +35,7 @@ const Home = () => {
         <p>Detalles sobre nuestros servicios...</p>
 
         {/* Botones */}
-        <ButtonGroup /> {/* Añadir el componente ButtonGroup en el cuerpo */}
+        <ButtonGroup />
       </div>
 
       {/* Footer */}
