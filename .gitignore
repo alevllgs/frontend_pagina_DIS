@@ -130,4 +130,6 @@ src/assets/react.svg
 !public/img/
 
 # Aseguramos que los contenidos de la carpeta no sean ignorados
+# Excepción para incluir la carpeta pagina_sigges y todo su contenido
 !public/pagina_sigges/
+!public/pagina_sigges/**
