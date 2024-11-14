@@ -126,6 +126,8 @@ Desktop.ini
 public/vite.svg
 src/assets/react.svg
 
-
-# Excepción explícita para incluir la carpeta img
+# Excepción explícita para incluir carpetas específicas
 !public/img/
+
+# Aseguramos que los contenidos de la carpeta no sean ignorados
+!public/pagina_sigges/**

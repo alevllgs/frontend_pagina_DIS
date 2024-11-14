@@ -37,7 +37,7 @@ const Ges = () => {
 
         <div className="buttons">
           <Button
-            href=""
+            href="/pagina_sigges/protocolos_ges.html"
             icon="fa-person-walking-arrow-right"
             title="Mapa derivación GES (flujo)"
             delay="300"
