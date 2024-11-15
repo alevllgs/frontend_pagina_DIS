@@ -1,65 +1,61 @@
 /* src/styles/Home.css */
 /* Contenedor del banner */
 .banner-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px; /* Mantén la altura que desees para el banner */
-    z-index: -1; /* Envía el banner al fondo */
-    overflow: hidden;
-  }
-  
-  /* Cuerpo */
-  .cuerpo {
-    position: relative; /* Esto asegura que el cuerpo se posicione debajo del banner */
-    margin-top:16%; /* Ajusta este valor a la altura del banner */
-    margin-bottom: 3%;
-    margin-left: 3%;
-    background-color: #ffffff; /* Asegura que el cuerpo se destaque visualmente */
-    z-index: 1; /* Para asegurarnos de que el contenido del cuerpo esté encima del banner */
-  }
-  
-
-  body {
-    margin: 0; /* Asegúrate de que el body no tenga márgenes */
-    overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
-  }
-  
-  .footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    margin: 0; /* Elimina todos los márgenes */
-    position: relative;
-    left: 0;
-  }
-
-
-  @media (max-width: 1400px) {
-    .cuerpo {
-
-      margin-top: 17%; /* Ajusta este valor a la altura del banner */
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px; /* Mantén la altura que desees para el banner */
+  z-index: -1; /* Envía el banner al fondo */
+  overflow: hidden;
 }
-  
-@media (max-width:1300px) {
-  .cuerpo {
 
+/* Cuerpo */
+.cuerpo {
+  position: relative; /* Esto asegura que el cuerpo se posicione debajo del banner */
+  margin-top: 16%; /* Ajusta este valor a la altura del banner */
+  margin-bottom: 3%;
+  margin-left: 3%;
+  background-color: #ffffff; /* Asegura que el cuerpo se destaque visualmente */
+  z-index: 1; /* Para asegurarnos de que el contenido del cuerpo esté encima del banner */
+}
+
+body {
+  margin: 0; /* Asegúrate de que el body no tenga márgenes */
+  overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  margin: 0; /* Elimina todos los márgenes */
+  position: relative;
+  left: 0;
+}
+
+@media (max-width: 1400px) {
+  .cuerpo {
+    margin-top: 17%; /* Ajusta este valor a la altura del banner */
+  }
+}
+
+@media (max-width: 1300px) {
+  .cuerpo {
     margin-top: 18%; /* Ajusta este valor a la altura del banner */
   }
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   .cuerpo {
     margin-top: 24%; /* Ajusta este valor a la altura del banner */
   }
 }
 
-  @media (max-width: 900px) {
-    .cuerpo {
-      margin-top:5%; /* Ajusta este valor a la altura del banner */
-    }
+@media (max-width: 900px) {
+  .cuerpo {
+    margin-top: 5%; /* Ajusta este valor a la altura del banner */
+  }
 }

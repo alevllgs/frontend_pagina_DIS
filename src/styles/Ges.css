@@ -1,30 +1,51 @@
-/* src/styles/GesPage.css */
-.ges-page {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .ges-page h1 {
-    color: #2c3e50;
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .ges-page ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .ges-page ul li {
-    margin-bottom: 10px;
-  }
-  
-  .ges-page ul li a {
-    color: #3498db;
-    text-decoration: none;
-  }
-  
-  .ges-page ul li a:hover {
-    text-decoration: underline;
-  }
-  
+.document-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr)); /* Más ancho para las tarjetas */
+  gap: 30px; /* Espaciado más grande entre tarjetas */
+  padding: 20px;
+  justify-content: center; /* Centra el contenido */
+}
+
+.ges-page h1 {
+  color: #2c3e50;
+  font-size: 2em;
+  margin-left: 20px; /* Solo margen izquierdo */
+}
+
+/* Tarjeta individual */
+.document-card {
+  text-align: center;
+  border: 2px solid #e74c3c;
+  border-radius: 10px;
+  padding: 20px; /* Más espacio interno */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.document-card:hover {
+  transform: scale(1.1); /* Efecto de ampliación más pronunciado */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+
+/* Enlace dentro de la tarjeta */
+.document-card a {
+  text-decoration: none;
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ícono PDF */
+.document-card i {
+  font-size: 3.5rem; /* Ícono más grande */
+  color: #e74c3c;
+  margin-bottom: 15px; /* Espacio adicional debajo del ícono */
+}
+
+/* Texto debajo del ícono */
+.document-card p {
+  font-size: 1.2rem; /* Texto más grande */
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}

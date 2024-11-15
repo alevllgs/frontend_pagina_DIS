@@ -29,8 +29,12 @@ const Home = () => {
       {/* Cuerpo */}
       <div className="cuerpo">
         <h2>Departamento de Información Sanitaria</h2>
-        <p>Bienvenido al sitio web del Departamento de Información Sanitaria (DIS) del Servicio de Salud Metropolitano Oriente (SSMO). <br/>
-        Aqui podra encontrar información relevante generada por los distintos establecimientos pertenecientes al SSMO, la cual se irá actualizando periódicamente.
+        <p>
+          Bienvenido al sitio web del Departamento de Información Sanitaria
+          (DIS) del Servicio de Salud Metropolitano Oriente (SSMO). <br />
+          Aqui podra encontrar información relevante generada por los distintos
+          establecimientos pertenecientes al SSMO, la cual se irá actualizando
+          periódicamente.
         </p>
 
         <h2>Nuestros Servicios</h2>
