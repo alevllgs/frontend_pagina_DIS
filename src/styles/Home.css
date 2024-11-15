@@ -36,6 +36,14 @@ body {
   left: 0;
 }
 
+.search-results p {
+  text-align: center;
+  color: #999; /* Color gris para el mensaje */
+  font-style: italic;
+  margin: 10px 0;
+}
+
+
 @media (max-width: 1400px) {
   .cuerpo {
     margin-top: 17%; /* Ajusta este valor a la altura del banner */

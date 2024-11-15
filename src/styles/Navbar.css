@@ -1,5 +1,3 @@
-/* src/styles/Navbar.css */
-
 /* Estilo del navbar */
 .navbar {
     position: sticky; /* Fija el navbar en la parte superior al desplazarse */
@@ -24,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0;
+    margin: 0 auto;
     width: 95%;
 }
 
@@ -68,8 +66,11 @@
 /* Contenedor del buscador */
 .navbar-search {
     display: flex;
-    align-items: center; /* Alineación centrada */
+    align-items: center;
     margin-left: auto; /* Alinea el buscador a la derecha */
+    max-width: 300px; /* Ancho máximo para el buscador */
+    width: 100%;
+    position: relative; /* Para posicionar los resultados */
 }
 
 /* Estilo del campo de búsqueda */
@@ -98,6 +99,44 @@
     background-color: #e0e0e0;
 }
 
+/* Resultados de búsqueda */
+.search-results {
+    position: absolute;
+    top: 100%; /* Debajo del buscador */
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto; /* Scroll si hay demasiados resultados */
+}
+
+.search-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li {
+    margin: 5px 0;
+}
+
+.search-results li a {
+    text-decoration: none;
+    color: #3498db;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search-results li a:hover {
+    background-color: #f0f0f0;
+    color: #2980b9;
+}
+
 /* Vista celular (responsive) */
 @media (max-width: 900px) {
     .navbar {
@@ -112,55 +151,46 @@
 
     .navbar-logo {
         text-align: center;
-        margin-bottom: 3%;
+        margin-bottom: 10px;
     }
 
     .navbar-links {
         flex-direction: column;
         width: 100%;
-
     }
 
     .navbar-links a {
-
         width: 100%;
         text-align: left;
     }
 
     .navbar-search {
-        width:100%;
-        display: flex;
-        flex-direction: row;
-        background-color: chartreuse;
-   
+        width: 100%;
+        margin-top: 10px;
     }
 
     .search-input {
         width: calc(100% - 50px);
         flex: 1;
     }
-
-    .banner-container {
-        display: none; /* Ocultar el banner en vista celular */
-    }
 }
 
+/* Acciones del navbar */
 .navbar-actions {
     display: flex;
     align-items: center;
     gap: 10px; /* Espaciado entre la búsqueda y el botón */
-  }
-  
-  .dark-mode-toggle {
+}
+
+.dark-mode-toggle {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-color); /* Se adapta al tema actual */
     transition: transform 0.3s ease;
-  }
-  
-  .dark-mode-toggle:hover {
+}
+
+.dark-mode-toggle:hover {
     transform: scale(1.2); /* Efecto al pasar el mouse */
-  }
-  
+}

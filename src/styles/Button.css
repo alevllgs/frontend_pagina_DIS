@@ -3,8 +3,8 @@
 
 /* Estilos para el grupo de botones */
 .buttons {
-  display: grid; /* Usar Grid para organizar botones en filas */
-  grid-template-columns: repeat(5, 1fr); /* Mostrar 5 botones por fila */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 botones por fila */
   gap: 30px; /* Espaciado entre botones */
   padding: 20px;
   justify-items: center; /* Centrar los botones dentro de cada celda */
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  background: var(--valor-gradiente); /* Usar variable por defecto */
+  background: var(--valor-gradiente);
   border-radius: 15px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   width: 150px;
@@ -48,6 +48,7 @@
   padding: 20px;
   font-family: 'Poppins', sans-serif;
 }
+
 
 /* Estilo para el hover de los botones */
 .button:hover {
