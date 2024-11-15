@@ -1,69 +1,51 @@
-/* src/styles/Home.css */
-/* Contenedor del banner */
-.banner-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300px; /* Mantén la altura que desees para el banner */
-  z-index: -1; /* Envía el banner al fondo */
-  overflow: hidden;
+/* Contenedor de los botones */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Mostrar 5 botones por fila */
+  gap: 30px; /* Espaciado entre botones */
+  padding: 20px;
+  justify-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
-/* Cuerpo */
-.cuerpo {
-  position: relative; /* Esto asegura que el cuerpo se posicione debajo del banner */
-  margin-top: 16%; /* Ajusta este valor a la altura del banner */
-  margin-bottom: 3%;
-  margin-left: 3%;
- 
-  z-index: 1; /* Para asegurarnos de que el contenido del cuerpo esté encima del banner */
-}
-
-body {
-  margin: 0; /* Asegúrate de que el body no tenga márgenes */
-  overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
-}
-
-.footer {
-  background: #333;
-  color: #fff;
-  padding: 10px;
+/* Estilos para cada botón individual */
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
-  width: 100%;
-  margin: 0; /* Elimina todos los márgenes */
-  position: relative;
-  left: 0;
+  background: var(--valor-gradiente);
+  border-radius: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 150px;
+  height: 180px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.search-results p {
-  text-align: center;
-  color: #999; /* Color gris para el mensaje */
-  font-style: italic;
-  margin: 10px 0;
+/* Hover en botones */
+.button:hover {
+  background: var(--valor-gradiente-inv);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-@media (max-width: 1400px) {
-  .cuerpo {
-    margin-top: 17%; /* Ajusta este valor a la altura del banner */
+/* Vista celular (responsive) */
+@media (max-width: 768px) {
+  .buttons {
+    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 20px;
+    padding: 10px;
   }
-}
 
-@media (max-width: 1300px) {
-  .cuerpo {
-    margin-top: 18%; /* Ajusta este valor a la altura del banner */
-  }
-}
-
-@media (max-width: 1200px) {
-  .cuerpo {
-    margin-top: 24%; /* Ajusta este valor a la altura del banner */
-  }
-}
-
-@media (max-width: 900px) {
-  .cuerpo {
-    margin-top: 5%; /* Ajusta este valor a la altura del banner */
+  .button {
+    width: 85%; /* Ancho máximo disponible */
   }
 }

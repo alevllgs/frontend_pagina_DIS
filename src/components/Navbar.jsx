@@ -28,8 +28,16 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <Link to="/">Departamento de Información Sanitaria</Link>
+          <Link to="/">
+            <img
+              src="/img/banner/logo_salud_oriente.png"
+              alt="Logo Salud Oriente"
+              className="navbar-logo-image"
+            />
+            Departamento de Información Sanitaria
+          </Link>
         </div>
+
         <div className="navbar-links">
           <NavLink to="/" exact activeClassName="active">
             Inicio

@@ -30,8 +30,8 @@
   --gradient-inv-5: linear-gradient(135deg, #c2e9fb, #a1c4fd);
 }
 
-/* Estilos para cada botón individual */
-.button {
+/* Estilos para cada botón individual dentro de .buttons */
+.buttons .button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,23 +49,22 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-/* Estilo para el hover de los botones */
-.button:hover {
+/* Estilo para el hover de los botones dentro de .buttons */
+.buttons .button:hover {
   background: var(--valor-gradiente-inv); /* Cambiar el degradado al pasar el mouse */
   transform: scale(1.05); /* Aumentar ligeramente el tamaño */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el mouse */
 }
 
-/* Estilos para el ícono dentro del botón */
-.icon {
+/* Estilos para el ícono dentro de los botones dentro de .buttons */
+.buttons .icon {
   font-size: 65px; /* Tamaño más grande de los íconos */
   color: #ffffff; /* Cambiar color del ícono */
   margin-bottom: 20px; /* Añadir más espacio debajo del ícono para ajustar la posición del texto */
 }
 
-/* Estilos para el título del botón */
-.title {
+/* Estilos para el título dentro de los botones dentro de .buttons */
+.buttons .title {
   margin-top: auto; /* Asegurar que el título se quede al fondo del botón */
   font-size: 15px; /* Reducir el tamaño de la letra */
   font-weight: 600; /* Hacer la letra más gruesa */
@@ -81,7 +80,7 @@
     padding: 10px;
   }
 
-  .button {
+  .buttons .button {
     width: 85%; /* Hacer que los botones ocupen todo el ancho disponible */
   }
 }

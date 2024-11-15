@@ -5,9 +5,8 @@ const banners = [
   "public/img/banner/banner1.jpg",
   "public/img/banner/banner2.jpg",
   "public/img/banner/banner3.jpg",
-  "public/img/banner/banner4.jpg"
+  "public/img/banner/banner4.jpg",
 ];
-const logo = "public/img/banner/logo_salud_oriente.png";
 
 const CreaBanner = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
@@ -25,11 +24,6 @@ const CreaBanner = () => {
         src={banners[currentBannerIndex]}
         alt="Banner"
         className="banner-image"
-      />
-      <img
-        src={logo}
-        alt="Logo Salud Oriente"
-        className="banner-logo"
       />
     </div>
   );
