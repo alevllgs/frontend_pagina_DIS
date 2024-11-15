@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link, useLocation } from "react-router-dom";
+import { toggleDarkMode } from "../main.jsx"; // Importa la función toggleDarkMode
 import '../styles/Navbar.css'; // Importa el archivo CSS actualizado
 
 const Navbar = () => {
@@ -43,9 +44,15 @@ const Navbar = () => {
           <NavLink to="/quienes-somos" activeClassName="active">Quiénes Somos</NavLink>
           <NavLink to="/documentos" activeClassName="active">Documentos</NavLink>
         </div>
-        <div className="navbar-search">
-          <input type="text" placeholder="¿Qué necesitas?" className="search-input" />
-          <button className="search-button">🔍</button> 
+        <div className="navbar-actions">
+          <div className="navbar-search">
+            <input type="text" placeholder="¿Qué necesitas?" className="search-input" />
+            <button className="search-button">🔍</button>
+          </div>
+          {/* Botón para modo oscuro */}
+          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+            🌙
+          </button>
         </div>
       </div>
     </nav>

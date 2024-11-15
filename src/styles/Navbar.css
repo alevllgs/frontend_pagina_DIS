@@ -145,3 +145,22 @@
     }
 }
 
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre la búsqueda y el botón */
+  }
+  
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color); /* Se adapta al tema actual */
+    transition: transform 0.3s ease;
+  }
+  
+  .dark-mode-toggle:hover {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+  }
+  

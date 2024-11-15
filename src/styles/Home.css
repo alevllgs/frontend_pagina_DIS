@@ -16,7 +16,7 @@
   margin-top: 16%; /* Ajusta este valor a la altura del banner */
   margin-bottom: 3%;
   margin-left: 3%;
-  background-color: #ffffff; /* Asegura que el cuerpo se destaque visualmente */
+ 
   z-index: 1; /* Para asegurarnos de que el contenido del cuerpo esté encima del banner */
 }
 

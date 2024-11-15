@@ -13,7 +13,6 @@ footer {
   grid-row: 3; /* Posiciona el footer en la última fila */
 }
 
-
 /* Sección izquierda (ges-page) */
 .ges-page {
   display: flex;
@@ -25,14 +24,15 @@ footer {
   overflow-y: auto; /* Scroll en caso de exceso de contenido */
   margin-left: 20px;
   margin-top: 20px;
+  background-color: var(--card-background); /* Cambiar según el modo */
+  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
 /* Títulos principales */
 .ges-page h1 {
-  color: #2c3e50;
   font-size: 2em;
   margin: 0;
-  
+  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
 /* Botones en ges-page */
@@ -55,16 +55,17 @@ footer {
   overflow-y: auto; /* Scroll en caso de exceso de contenido */
   margin-right: 20px;
   margin-top: 20px;
+  background-color: var(--card-background); /* Cambiar según el modo */
 }
 
 /* Título dentro de document-container */
 .document-container h2 {
   text-align: center;
-  color: #2c3e50;
   font-size: 1.5em;
   margin: 0; /* Sin margen adicional */
   padding-bottom: 10px; /* Espacio entre el título y las tarjetas */
-  border-bottom: 2px solid #e74c3c; /* Línea decorativa debajo del título */
+  border-bottom: 2px solid var(--text-color); /* Línea decorativa según el modo */
+  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
 /* Contenedor para las tarjetas de documentos */
@@ -77,10 +78,12 @@ footer {
 /* Tarjetas de documentos */
 .document-card {
   text-align: center;
-  border: 2px solid #e74c3c;
+  border: 2px solid var(--text-color); /* Cambiar borde según el modo */
   border-radius: 10px;
   padding: 15px;
+  background-color: var(--card-background); /* Cambiar fondo según el modo */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
 .document-card:hover {
@@ -91,7 +94,7 @@ footer {
 /* Enlaces dentro de las tarjetas */
 .document-card a {
   text-decoration: none;
-  color: #2c3e50;
+  color: var(--text-color); /* Cambiar texto según el modo */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,27 +102,30 @@ footer {
 
 /* Ícono PDF */
 .document-card i {
-  
   font-size: 4rem; /* Ícono grande */
-  color: #e74c3c;
+  color: #e74c3c; /* Usar una variable dinámica */
   margin-bottom: 10px;
   margin-top: 20px;
 }
+
+
 
 /* Texto debajo del ícono */
 .document-card p {
   font-size: 1rem;
   font-weight: bold;
   margin: 0;
+  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
+/* Footer */
 footer {
-  background-color: #f8f9fa;
+  background-color: var(--card-background); /* Cambiar según el modo */
   text-align: center;
   padding: 10px 0; /* Solo espacio interno vertical */
   margin: 0; /* Sin márgenes */
   font-size: 14px;
-  color: #2c3e50;
+  color: var(--text-color); /* Cambiar texto según el modo */
   width: 100%; /* Ocupa todo el ancho */
   position: relative; /* Mantener en flujo normal */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para separarlo visualmente */
