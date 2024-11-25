@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Render de la aplicación React
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/segun_ejemplo">
       <UserProvider>
         <App />
       </UserProvider>
