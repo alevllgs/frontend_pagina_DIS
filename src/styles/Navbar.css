@@ -4,7 +4,7 @@
     top: 0;
     width: 100%;
     padding: 15px 20px;
-    background: rgba(255, 255, 255, 0); /* Fondo transparente por defecto */
+    background: #04759b; /* Fondo transparente por defecto */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #fff;
     z-index: 10;
@@ -25,28 +25,26 @@
     width: 95%;
 }
 
-/* Logo del navbar */
+/* Estilo del contenedor del logo */
 .navbar-logo {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 20px; /* Espaciado entre el logo y el texto */
-    white-space: nowrap; /* Evitar que el texto salte de línea */
-}
+    gap: 10px;
+    white-space: nowrap;
+  }
+  
+  .navbar-logo-image {
+    height: 50px;
+    width: auto;
+  }
 
-.navbar-logo a {
-    display: flex;
-    align-items: center; /* Asegura que el logo y el texto estén alineados verticalmente */
-    text-decoration: none;
-    color: #ffffff;
+/* Estilo del título debajo del logo */
+.navbar-logo-title {
     font-size: 1.2rem;
     font-weight: bold;
-    gap: 10px; /* Espaciado entre el logo y el texto */
-}
-
-.navbar-logo img.navbar-logo-image {
-    height: 50px; /* Ajusta la altura del logo */
-    width: auto; /* Mantén las proporciones */
-}
+    color: #ffffff;
+  }
 
 /* Enlaces del navbar */
 .navbar-links {
@@ -150,6 +148,13 @@
     color: #2980b9;
 }
 
+/* Modo oscuro: Mantener transparencia por defecto */
+body.dark-mode .navbar {
+    background: rgb(0, 0, 0); /* Fondo transparente en modo oscuro */
+    color: #fff; /* Asegúrate de que el texto sea legible */
+}
+
+
 /* Vista celular (responsive) */
 @media (max-width: 900px) {
     .navbar {
@@ -165,18 +170,20 @@
     }
 
     .navbar-logo {
-        flex-direction: column; /* Asegura que el logo esté en su propia fila */
+        flex-direction: column; /* Cambia el logo y texto a formato vertical */
+        align-items: center; /* Centra el contenido */
         text-align: center;
         margin-bottom: 10px;
     }
 
-    .navbar-logo img.navbar-logo-image {
-        height: 70px; /* Aumentar el tamaño del logo para vista móvil */
-        margin-bottom: 10px; /* Añadir espacio debajo del logo */
-    }
+    .navbar-logo-image {
+        height: 70px; /* Aumenta el tamaño del logo */
+        margin-bottom: 10px; /* Espacio debajo del logo */
+      }
 
     .navbar-logo a {
         font-size: 1rem; /* Ajustar el tamaño del texto debajo del logo */
+        margin-top: 5px; /* Añadir espacio entre el logo y el texto */
     }
 
     .navbar-links {
