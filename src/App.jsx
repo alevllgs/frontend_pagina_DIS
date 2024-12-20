@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import QuienesSomos from "./pages/QuienesSomos";
 import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
-import Ges from "./pages/Ges"; // Importa el componente de la página GES
+import Ges from "./pages/Ges"; // Página GES
+import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
@@ -29,12 +30,14 @@ const App = () => {
         {/* Ruta para Documentos */}
         <Route path="/documentos" element={<Documentos />} />
         
-        {/* Nueva ruta para GES */}
+        {/* Ruta para GES */}
         <Route path="/ges" element={<Ges />} />
+        
+        {/* Nueva ruta para el Validador */}
+        <Route path="/validador" element={<Validador />} />
       </Routes>
     </div>
   );
 };
 
 export default App;
-
