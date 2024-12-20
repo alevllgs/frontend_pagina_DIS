@@ -4,7 +4,7 @@ import Footer from "../components/Footer"; // Importar el Footer
 import "../styles/Button.css"; // Reutilizamos los estilos existentes
 import "../styles/Ges.css"; // Reutilizamos los estilos existentes
 
-const Ges = () => {
+const GestionClinicaFinanciera = () => {
   return (
     <div className="layout-container">
       {/* Columna izquierda: Botones y secciones GES */}
@@ -12,34 +12,21 @@ const Ges = () => {
         <h1>Informes BI</h1>
         <div className="buttons">
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYWM0OGMxNWItYmMyMC00ZDM5LWEwZWMtNzEwOTBhODQwMjQ2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-hourglass-end"
-            title="Garantías Retrasadas GES (bimensual)"
+            href="https://app.powerbi.com/view?r=eyJrIjoiM2ZjNGI1ODQtODMwOS00NmI4LWE4ODAtMmZiMjk5NDNkZjI3IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="fa-circle-dollar-to-slot"
+            title="Gestión clínica financiera (mensual)"
             delay="100"
             iconColor="#ff6b6b"
           />
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYTE5Y2RjNmYtZmFlMy00NDc1LThhYzUtNWM3Zjc1ODE2OTY2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-clock"
-            title="Cumplimiento de Garantías GES (mensual)"
-            delay="200"
-            iconColor="#ff6b6b"
-          />
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiNjIzNGI0ODAtY2FhOC00YWVkLThhMTgtMmFkZTFhMDRiYmI3IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-stopwatch"
-            title="Garantías Exceptuadas Transitorias"
-            delay="300"
-            iconColor="#ff6b6b"
-          />
+      
         </div>
 
-        <h1>Mapa derivación GES (flujo)</h1>
+        <h1>Validador SIGCOM</h1>
         <div className="buttons">
           <Button
             href="/pagina_sigges/protocolos_ges.html"
-            icon="fa-person-walking-arrow-right"
-            title="Mapa derivación GES (flujo)"
+            icon="fa-list-check"
+            title="Validador SIGCOM"
             delay="300"
             iconColor="#ff6b6b"
           />

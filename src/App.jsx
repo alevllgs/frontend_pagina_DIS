@@ -6,6 +6,7 @@ import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
 import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
+import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 
 const App = () => {
   return (
@@ -30,8 +31,9 @@ const App = () => {
         {/* Ruta para Documentos */}
         <Route path="/documentos" element={<Documentos />} />
         
-        {/* Ruta para GES */}
+        {/* Rutas para botones principales */}
         <Route path="/ges" element={<Ges />} />
+        <Route path="/gestion_clinica_financiera" element={<GestionClinicaFinanciera />} />
         
         {/* Nueva ruta para el Validador */}
         <Route path="/validador" element={<Validador />} />
