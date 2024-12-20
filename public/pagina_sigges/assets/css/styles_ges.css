@@ -1,0 +1,328 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Estilo de fuente inicial */
+    line-height: 1.5;
+}
+
+
+
+.justify-text {
+    text-align: justify;
+    text-indent: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.info-item-titulo {
+    padding-bottom: 1%;
+    text-align: justify;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 10px;
+    /* Espacio entre filas */
+}
+
+.titulo-principal {
+    display: flex;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.titulo-logo {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titulo-titulo {
+    flex: 2;
+}
+
+.buscador {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.info-title {
+    flex: 1;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.info-content {
+    flex: 6;
+}
+
+.info-texto-rojo {
+    font-weight: bold;
+    color: red;
+    padding-top: 2%;
+}
+
+.info-anexos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.info-anexos-titulo {
+    padding-bottom: 1%;
+}
+
+.big-icon {
+    font-size: 36px;
+    /* Aumenta el tamaño de los íconos */
+}
+
+.center-text {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.center-header {
+    text-align: center;
+    background-color: #6d747c;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-top: none;
+    border-bottom: none;
+    /* Elimina cualquier borde residual superior o inferior */
+    padding: 0;
+    /* Asegura que no haya relleno en la fila combinada */
+    margin: 0;
+}
+
+.colspan {
+    background-color: #343a40;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-top: none;
+    /* Elimina cualquier borde superior */
+    border-top: none;
+    border-bottom: none;
+    /* Eliminar bordes de las celdas del encabezado */
+}
+
+
+
+/* Estilo para pantallas grandes: Mantener el ancho de la tabla completo, incluso al filtrar */
+t
+
+/* Asegurar que la tabla respete el ancho de las columnas */
+table {
+    table-layout: fixed;
+}
+
+/* Estilos para el encabezado de la tabla */
+table th {
+    text-align: center;
+    /* Centrar el texto en las celdas del encabezado */
+    vertical-align: middle;
+
+    table-layout: fixed;
+}
+
+
+/* Ejemplo para 9 columnas: personaliza el porcentaje para cada una */
+
+/* Primera columna */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 4%;
+    /* Asigna 10% a la primera columna */
+}
+
+/* Segunda columna */
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 18%;
+    /* Asigna 15% a la segunda columna */
+}
+
+/* Tercera columna */
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 9%;
+    /* Asigna 12% a la tercera columna */
+}
+
+/* Cuarta columna */
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 9%;
+    /* Asigna 10% a la cuarta columna */
+}
+
+/* Quinta columna */
+table th:nth-child(5),
+table td:nth-child(5) {
+    width: 7%;
+    /* Asigna 10% a la quinta columna */
+}
+
+/* Sexta columna */
+table th:nth-child(6),
+table td:nth-child(6) {
+    width: 7%;
+    /* Asigna 12% a la sexta columna */
+}
+
+/* Séptima columna */
+table th:nth-child(7),
+table td:nth-child(7) {
+    width: 7%;
+    /* Asigna 10% a la séptima columna */
+}
+
+/* Octava columna */
+table th:nth-child(8),
+table td:nth-child(8) {
+    width: 7%;
+    /* Asigna 11% a la octava columna */
+}
+
+/* Octava columna */
+table th:nth-child(9),
+table td:nth-child(9) {
+    width: 7%;
+    /* Asigna 11% a la octava columna */
+}
+
+/* Novena columna */
+table th:nth-child(10),
+table td:nth-child(10) {
+    width: 25%;
+    /* Asigna 10% a la novena columna */
+}
+
+
+#tablaDatos tbody {
+    min-height: 300px;
+    /* Asegurar que la tabla no se encoja cuando se filtren filas */
+}
+
+/* Estilo para valores SI y NO */
+.texto-verde {
+    color: green;
+}
+
+.texto-rojo {
+    color: red;
+}
+
+/* Vista celular */
+@media (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .titulo-principal {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .buscador {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 2%;
+    }
+
+    .table-light {
+        width: 100%;
+        overflow-x: auto;
+        /* Permite el desplazamiento horizontal en dispositivos móviles */
+    }
+
+    table {
+        white-space: nowrap;
+        /* Evita que el contenido de las celdas se ajuste en líneas separadas */
+        width: 100%;
+        /* Asegura que la tabla ocupe todo el ancho del contenedor */
+        table-layout: auto;
+        /* Permite que las columnas sean flexibles en dispositivos móviles */
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 2%;
+    }
+
+    /* Asegura que los botones y enlaces sean fáciles de tocar en móviles */
+    a,
+    button {
+        padding: 10px;
+        font-size: 16px;
+        touch-action: manipulation;
+    }
+
+    a,
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    img,
+    iframe,
+    .big-icon {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilo del título para pantallas grandes */
+.titulo-titulo h1 {
+    font-size: 2rem;
+    /* Tamaño para pantallas grandes */
+}
+
+/* Vista celular: achicar el tamaño del título */
+@media (max-width: 768px) {
+    .titulo-titulo h1 {
+        font-size: 1.5rem;
+        /* Tamaño del título reducido para celulares */
+    }
+}
