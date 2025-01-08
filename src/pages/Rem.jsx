@@ -37,7 +37,7 @@ const Rem = () => {
         <h1>Envios y correcciones REM</h1>
         <div className="buttons">
           <Button
-            href="/pagina_sigges/protocolos_ges.html"
+            href="/registro"
             icon="fa-file-import"
             title="Recepción REM"
             delay="300"
