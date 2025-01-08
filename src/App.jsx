@@ -4,6 +4,7 @@ import QuienesSomos from "./pages/QuienesSomos";
 import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
+import Rem from "./pages/Rem"; // Página GES
 import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -32,6 +33,9 @@ const App = () => {
         
         {/* Ruta para GES */}
         <Route path="/ges" element={<Ges />} />
+
+         {/* Ruta para REM */}
+         <Route path="/rem" element={<Rem />} />
         
         {/* Nueva ruta para el Validador */}
         <Route path="/validador" element={<Validador />} />
