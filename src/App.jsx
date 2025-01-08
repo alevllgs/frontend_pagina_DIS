@@ -7,6 +7,7 @@ import Ges from "./pages/Ges"; // Página GES
 import Rem from "./pages/Rem"; // Página GES
 import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
+import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 
 const App = () => {
   return (
@@ -31,7 +32,7 @@ const App = () => {
         {/* Ruta para Documentos */}
         <Route path="/documentos" element={<Documentos />} />
         
-        {/* Ruta para GES */}
+        {/* Rutas para botones principales */}
         <Route path="/ges" element={<Ges />} />
 
          {/* Ruta para REM */}
