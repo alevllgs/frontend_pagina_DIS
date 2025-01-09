@@ -1,0 +1,168 @@
+/* Contenedor principal con dos columnas */
+.layout-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 3/4 para ges-page, 1/4 para documentos */
+  grid-template-rows: auto 1fr auto; /* Fila para contenido y footer */
+  gap: 20px; /* Espaciado entre columnas */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  box-sizing: border-box;
+}
+
+/* Asegurarse de que el footer esté en la última fila */
+footer {
+  grid-row: 3; /* Posiciona el footer en la última fila */
+}
+
+/* Sección izquierda (ges-page) */
+.ges-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaciado entre secciones */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  overflow-y: auto; /* Scroll en caso de exceso de contenido */
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: var(--card-background); /* Cambiar según el modo */
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+/* Títulos principales */
+.ges-page h1 {
+  font-size: 2em;
+  margin: 0;
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+/* Botones en ges-page */
+.buttons {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los botones se ajusten en varias filas */
+  gap: 20px; /* Espaciado entre botones */
+  justify-content: flex-start; /* Alinear al inicio */
+}
+
+/* Sección derecha (document-container) */
+.document-container {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Primera fila para el título, segunda para las tarjetas */
+  grid-template-columns: 1fr; /* El título ocupa toda la línea */
+  gap: 20px; /* Espaciado entre el título y las tarjetas */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  overflow-y: auto; /* Scroll en caso de exceso de contenido */
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: var(--card-background); /* Cambiar según el modo */
+}
+
+/* Título dentro de document-container */
+.document-container h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0; /* Sin margen adicional */
+  padding-bottom: 10px; /* Espacio entre el título y las tarjetas */
+  border-bottom: 2px solid var(--text-color); /* Línea decorativa según el modo */
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+/* Contenedor para las tarjetas de documentos */
+.document-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
+  gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+/* Tarjetas de documentos */
+.document-card {
+  text-align: center;
+  border: 2px solid var(--text-color); /* Cambiar borde según el modo */
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--card-background); /* Cambiar fondo según el modo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+.document-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Enlaces dentro de las tarjetas */
+.document-card a {
+  text-decoration: none;
+  color: var(--text-color); /* Cambiar texto según el modo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ícono PDF */
+.document-card i {
+  font-size: 4rem; /* Ícono grande */
+  color: #e74c3c; /* Usar una variable dinámica */
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+
+
+/* Texto debajo del ícono */
+.document-card p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+/* Footer */
+footer {
+  background-color: var(--card-background); /* Cambiar según el modo */
+  text-align: center;
+  padding: 10px 0; /* Solo espacio interno vertical */
+  margin: 0; /* Sin márgenes */
+  font-size: 14px;
+  color: var(--text-color); /* Cambiar texto según el modo */
+  width: 100%; /* Ocupa todo el ancho */
+  position: relative; /* Mantener en flujo normal */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para separarlo visualmente */
+  grid-column: 1 / -1; /* Atraviesa ambas columnas en la grid */
+}
+
+.form-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido y el footer estén espaciados */
+    min-height: 100vh; /* Altura mínima de la página */
+  }
+  
+
+
+/* Media query para vista celular */
+@media (max-width: 768px) {
+  .layout-container {
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: auto auto auto; /* Cada sección en su propia fila */
+    height: auto; /* Ajustar la altura al contenido */
+  }
+
+  .ges-page {
+    margin: 0; /* Sin márgenes laterales */
+    padding: 15px;
+  }
+
+  .document-container {
+    margin: 0; /* Sin márgenes laterales */
+    padding: 15px;
+    grid-template-columns: 1fr; /* Una tarjeta por fila */
+  }
+
+  .document-card-container {
+    grid-template-columns: 1fr; /* Una tarjeta por fila */
+  }
+}
+
+  
