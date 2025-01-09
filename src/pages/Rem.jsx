@@ -37,7 +37,7 @@ const Rem = () => {
         <h1>Envios y correcciones REM</h1>
         <div className="buttons">
           <Button
-            href="/registro"
+            href="/rem_login"
             icon="fa-file-import"
             title="Recepción REM"
             delay="300"
