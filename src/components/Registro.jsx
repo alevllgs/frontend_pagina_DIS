@@ -11,7 +11,7 @@ const Registro = () => {
 
   // Credenciales ficticias
   const mockEmail = "usuario@ejemplo.com";
-  const mockPassword = "123456";
+  const mockPassword = "45231530";
 
   const handleSubmit = (e) => {
     e.preventDefault();
