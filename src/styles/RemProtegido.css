@@ -41,6 +41,26 @@ footer {
   flex-wrap: wrap; /* Permitir que los botones se ajusten en varias filas */
   gap: 20px; /* Espaciado entre botones */
   justify-content: flex-start; /* Alinear al inicio */
+  color: #e74c3c;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaciado entre elementos */
+  color: var(--text-color); /* Cambiar texto según el modo */
+}
+
+.desplegable_orientacion {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+.subida {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Sección derecha (document-container) */
@@ -103,19 +123,14 @@ footer {
 /* Ícono PDF */
 .document-card i {
   font-size: 4rem; /* Ícono grande */
-  color: #e74c3c; /* Usar una variable dinámica */
-  margin-bottom: 10px;
-  margin-top: 20px;
+  color: #e74c3c;  /* Cambiar texto según el modo */
 }
-
-
 
 /* Texto debajo del ícono */
 .document-card p {
   font-size: 1rem;
   font-weight: bold;
   margin: 0;
-  color: var(--text-color); /* Cambiar texto según el modo */
 }
 
 /* Footer */
@@ -138,7 +153,49 @@ footer {
     justify-content: space-between; /* Asegura que el contenido y el footer estén espaciados */
     min-height: 100vh; /* Altura mínima de la página */
   }
-  
+  /* Estilos generales para listas desplegables */
+select {
+  appearance: none; /* Elimina el estilo por defecto */
+  background-color: #f5f5f5;
+  border: 2px solid #e74c3c; /* Color del borde */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse */
+select:hover {
+  background-color: #e74c3c; /* Color de fondo al pasar el mouse */
+  color: #fff; /* Color del texto */
+  border-color: #c0392b; /* Color del borde */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Efecto al hacer clic */
+select:focus {
+  outline: none; /* Elimina el borde por defecto */
+  border-color: #8e44ad; /* Borde al enfocarse */
+  box-shadow: 0 0 8px #8e44ad; /* Sombra con el color del borde */
+}
+
+/* Contenedor de la lista desplegable */
+.desplegable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado entre elementos */
+}
+
+/* Etiquetas */
+.desplegable label {
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
 
 
 /* Media query para vista celular */

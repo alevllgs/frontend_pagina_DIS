@@ -4,12 +4,20 @@ import "../styles/RemProtegido.css"; // Importar los estilos específicos para e
 
 const RemProtegido = () => {
   const [files, setFiles] = useState([]); // Estado para almacenar los archivos
+  const [serie, setSerie] = useState("SERIE A"); // Estado para la serie seleccionada
+  const [anio, setAnio] = useState("2024"); // Estado para el año seleccionado
+  const [mes, setMes] = useState("Enero"); // Estado para el mes seleccionado
   const [message, setMessage] = useState(""); // Estado para mensajes
 
   // Manejo del cambio de archivos
   const handleFileChange = (e) => {
     setFiles(e.target.files);
   };
+
+  // Manejo de cambios en las listas desplegables
+  const handleSerieChange = (e) => setSerie(e.target.value);
+  const handleAnioChange = (e) => setAnio(e.target.value);
+  const handleMesChange = (e) => setMes(e.target.value);
 
   // Envío de archivos al backend
   const handleSubmit = async (e) => {
@@ -24,6 +32,9 @@ const RemProtegido = () => {
     for (let i = 0; i < files.length; i++) {
       formData.append("file", files[i]); // ¡El nombre es importante!
     }
+    formData.append("serie", serie);
+    formData.append("anio", anio);
+    formData.append("mes", mes);
 
     try {
       const response = await fetch("http://127.0.0.1:5000/upload/", {
@@ -50,13 +61,71 @@ const RemProtegido = () => {
       <div className="form-container">
         <h1>Subir Archivos REM</h1>
         <form onSubmit={handleSubmit}>
-          <input
-            type="file"
-            multiple
-            accept=".xlsx,.xlsm"
-            onChange={handleFileChange}
-          />
-          <button type="submit">Subir Archivos</button>
+          {/* Lista desplegable para Serie REM */}
+          <div className="desplegable">
+            <div className="desplegable_orientacion">
+              <label htmlFor="serie">Serie REM:</label>
+              <select id="serie" value={serie} onChange={handleSerieChange}>
+                <option value="SERIE A">SERIE A</option>
+                <option value="SERIE BS">SERIE BS</option>
+                <option value="SERIE BM">SERIE BM</option>
+                <option value="SERIE D">SERIE D</option>
+                <option value="SERIE P">SERIE P</option>
+              </select>
+            </div>
+
+            {/* Lista desplegable para Año */}
+            <div className="desplegable_orientacion">
+              <label htmlFor="anio">Año:</label>
+              <select
+                id="anio"
+                value={anio}
+                onChange={(e) => setAnio(e.target.value)}
+              >
+                {!anio && (
+                  <option value="" disabled hidden>
+                    Selecciona un año
+                  </option>
+                )}
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+              </select>
+            </div>
+
+            {/* Lista desplegable para Mes */}
+            <div className="desplegable_orientacion">
+              <label htmlFor="mes">Mes:</label>
+              <select id="mes" value={mes} onChange={handleMesChange}>
+                <option value="" disabled>
+                  Selecciona el mes a subir
+                </option>
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="subida">
+            <input
+              type="file"
+              multiple
+              accept=".xlsx,.xlsm"
+              onChange={handleFileChange}
+            />
+            <button type="submit">Subir Archivos</button>
+          </div>
         </form>
         {message && <p className="message">{message}</p>}
       </div>
