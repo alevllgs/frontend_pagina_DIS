@@ -1,12 +1,12 @@
-import "../styles/Registro.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext"; // Importar el contexto de usuario
+import "../styles/Registro.css"; // Importar estilos originales
 
 const Registro = () => {
-  const [email, setEmail] = useState("");
+  const { email, setEmail } = useUser(); // Acceso al contexto para manejar el correo
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const navigate = useNavigate();
 
   // Credenciales ficticias
@@ -43,7 +43,7 @@ const Registro = () => {
             id="email"
             placeholder="Ingresa tu correo"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)} // Captura el correo en el contexto
             required
           />
         </div>
@@ -54,7 +54,7 @@ const Registro = () => {
             id="password"
             placeholder="Ingresa tu contraseña"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)} // Captura la contraseña
             required
           />
         </div>

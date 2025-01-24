@@ -1,15 +1,15 @@
-import { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-export const UserContext = createContext();
+const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const UserProvider = ({ children }) => {
+  const [email, setEmail] = useState(""); // Estado para el correo electrónico del usuario
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ email, setEmail }}>
       {children}
     </UserContext.Provider>
   );
 };
 
-export default UserProvider;
+export const useUser = () => useContext(UserContext);

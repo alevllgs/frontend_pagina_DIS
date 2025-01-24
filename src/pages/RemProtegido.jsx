@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer"; // Importar el Footer
+import { useUser } from "../context/UserContext"; // Importar el contexto de usuario
 import "../styles/RemProtegido.css"; // Importar los estilos específicos para este componente
 
 const RemProtegido = () => {
+  const { email } = useUser(); // Recuperar el correo electrónico del usuario autenticado
   const [files, setFiles] = useState([]); // Estado para almacenar los archivos
   const [serie, setSerie] = useState("SERIE A"); // Estado para la serie seleccionada
   const [anio, setAnio] = useState("2024"); // Estado para el año seleccionado
-  const [mes, setMes] = useState("Enero"); // Estado para el mes seleccionado
+  const [mes, setMes] = useState("01"); // Estado para el mes seleccionado
   const [message, setMessage] = useState(""); // Estado para mensajes
 
   // Manejo del cambio de archivos
@@ -28,10 +30,16 @@ const RemProtegido = () => {
       return;
     }
 
+    if (!email) {
+      alert("El correo del usuario no está disponible. Por favor, inicia sesión.");
+      return;
+    }
+
     const formData = new FormData();
     for (let i = 0; i < files.length; i++) {
       formData.append("file", files[i]); // ¡El nombre es importante!
     }
+    formData.append("email", email); // Añadir el correo al formulario
     formData.append("serie", serie);
     formData.append("anio", anio);
     formData.append("mes", mes);
@@ -77,11 +85,7 @@ const RemProtegido = () => {
             {/* Lista desplegable para Año */}
             <div className="desplegable_orientacion">
               <label htmlFor="anio">Año:</label>
-              <select
-                id="anio"
-                value={anio}
-                onChange={(e) => setAnio(e.target.value)}
-              >
+              <select id="anio" value={anio} onChange={handleAnioChange}>
                 {!anio && (
                   <option value="" disabled hidden>
                     Selecciona un año

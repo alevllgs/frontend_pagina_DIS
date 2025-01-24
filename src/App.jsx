@@ -12,6 +12,9 @@ import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 import SubirRem from "./pages/RemProtegido"; // Página para subir archivos REM
 import GesProtegido from "./pages/GesProtegido"; // Página protegida GES
 
+// Importar las rutas centralizadas
+import { routes } from "./config/routes";
+
 const App = () => {
   return (
     <div>
@@ -20,11 +23,11 @@ const App = () => {
       {/* Definición de rutas */}
       <Routes>
         {/* Ruta para Home */}
-        <Route path="/" element={<Home />} />
+        <Route path={routes.home} element={<Home />} />
         
         {/* Ruta protegida para "Quiénes Somos" */}
         <Route
-          path="/quienes-somos"
+          path={routes.quienesSomos}
           element={
             <ProtectedRoute>
               <QuienesSomos />
@@ -33,19 +36,19 @@ const App = () => {
         />
         
         {/* Ruta para Documentos */}
-        <Route path="/documentos" element={<Documentos />} />
+        <Route path={routes.documentos} element={<Documentos />} />
         
         {/* Rutas para botones principales */}
-        <Route path="/ges" element={<Ges />} />
-        <Route path="/rem" element={<Rem />} />
+        <Route path={routes.ges} element={<Ges />} />
+        <Route path={routes.rem} element={<Rem />} />
         
         {/* Rutas para Registro con redirección específica */}
-        <Route path="/rem_login" element={<Registro redirectTo="/subir_rem" />} />
-        <Route path="/ges_login" element={<Registro redirectTo="/ges_protegido" />} />
+        <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
+        <Route path={routes.gesLogin} element={<Registro redirectTo={routes.gesProtegido} />} />
         
         {/* Rutas protegidas */}
         <Route
-          path="/subir_rem"
+          path={routes.subirRem}
           element={
             <ProtectedRoute>
               <SubirRem />
@@ -53,7 +56,7 @@ const App = () => {
           }
         />
         <Route
-          path="/ges_protegido"
+          path={routes.gesProtegido}
           element={
             <ProtectedRoute>
               <GesProtegido />
@@ -62,7 +65,7 @@ const App = () => {
         />
         
         {/* Nueva ruta para el Validador */}
-        <Route path="/validador" element={<Validador />} />
+        <Route path={routes.validador} element={<Validador />} />
       </Routes>
     </div>
   );
