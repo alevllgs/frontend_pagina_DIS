@@ -9,7 +9,11 @@ const Registro = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  // Credenciales ficticias
+  const mockEmail = "usuario@ejemplo.com";
+  const mockPassword = "45231530";
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validación de campos vacíos
@@ -18,27 +22,13 @@ const Registro = () => {
       return;
     }
 
-    try {
-      // Petición al backend para validar credenciales
-      const response = await fetch("http://127.0.0.1:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        setError("");
-        console.log("Inicio de sesión exitoso.");
-        navigate("/subir_rem"); // Redirige a la página protegida
-      } else {
-        const data = await response.json();
-        setError(data.message || "Credenciales incorrectas.");
-      }
-    } catch (err) {
-      console.error(err);
-      setError("Ocurrió un error al intentar iniciar sesión.");
+    // Validar credenciales ficticias
+    if (email === mockEmail && password === mockPassword) {
+      setError("");
+      console.log("Inicio de sesión exitoso.");
+      navigate("/subir_rem"); // Redirige a la página protegida
+    } else {
+      setError("Credenciales incorrectas.");
     }
   };
 
