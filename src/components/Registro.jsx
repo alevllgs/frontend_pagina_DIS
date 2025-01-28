@@ -1,21 +1,18 @@
+import "../styles/Registro.css"; // Importar estilos originales
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../context/UserContext"; // Importar el contexto de usuario
-import "../styles/Registro.css"; // Importar estilos originales
+import { useUser } from "../context/UserContext";
 
-const Registro = () => {
-  const { email, setEmail } = useUser(); // Acceso al contexto para manejar el correo
+const Registro = ({ redirectTo = "/" }) => {
+  const { setEmail, setRol } = useUser(); // Contexto para manejar usuario
+  const [email, setEmailInput] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!email || !password) {
-      setError("Por favor, completa todos los campos.");
-      return;
-    }
+    setError(""); // Limpia errores previos
 
     try {
       const response = await fetch("http://localhost:5000/auth/login", {
@@ -26,19 +23,24 @@ const Registro = () => {
         body: JSON.stringify({ email, password }),
       });
 
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.error || "Error en el servidor");
+        return;
+      }
+
       const data = await response.json();
 
-      if (response.ok) {
-        setError("");
-        console.log("Inicio de sesión exitoso.");
-        navigate("/subir_rem");
-      } else {
-        setError(data.error || "Error en el inicio de sesión.");
-      }
+      // Guardar datos en el contexto
+      setEmail(data.email);
+      setRol(data.rol);
+
+      // Redirige según el prop `redirectTo`
+      navigate(redirectTo);
     } catch (error) {
-      setError("Error al conectar con el servidor.");
+      setError("Error al conectar con el servidor");
     }
-};
+  };
 
   return (
     <div className="form-container">
@@ -51,7 +53,7 @@ const Registro = () => {
             id="email"
             placeholder="Ingresa tu correo"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} // Captura el correo en el contexto
+            onChange={(e) => setEmailInput(e.target.value)}
             required
           />
         </div>
@@ -62,7 +64,7 @@ const Registro = () => {
             id="password"
             placeholder="Ingresa tu contraseña"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // Captura la contraseña
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>

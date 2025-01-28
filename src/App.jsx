@@ -5,12 +5,14 @@ import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
 import Rem from "./pages/Rem"; // Página REM
-import Registro from "./components/Registro"; // Actualizado para que sea reutilizable
+import Registro from "./components/Registro"; // Formulario de login general
 import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
 import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 import SubirRem from "./pages/RemProtegido"; // Página para subir archivos REM
 import GesProtegido from "./pages/GesProtegido"; // Página protegida GES
+import AdminLogin from "./pages/AdminLogin"; // Nueva página para login administrativo
+import Administrador from "./pages/Administrador"; // Página protegida para administradores
 
 // Importar las rutas centralizadas
 import { routes } from "./config/routes";
@@ -46,6 +48,9 @@ const App = () => {
         <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
         <Route path={routes.gesLogin} element={<Registro redirectTo={routes.gesProtegido} />} />
         
+        {/* Nueva ruta para AdminLogin */}
+        <Route path={routes.adminLogin} element={<AdminLogin />} />
+        
         {/* Rutas protegidas */}
         <Route
           path={routes.subirRem}
@@ -60,6 +65,16 @@ const App = () => {
           element={
             <ProtectedRoute>
               <GesProtegido />
+            </ProtectedRoute>
+          }
+        />
+        
+        {/* Nueva ruta para la página de Administrador */}
+        <Route
+          path={routes.administrador}
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <Administrador />
             </ProtectedRoute>
           }
         />

@@ -9,4 +9,6 @@ export const routes = {
   subirRem: "/subir_rem",
   gesProtegido: "/ges_protegido",
   validador: "/validador",
+  administrador: "/administrador",
+  adminLogin: "/admin_login", // Login administrativo
 };
