@@ -4,16 +4,17 @@
     top: 0;
     width: 100%;
     padding: 15px 20px;
-    background: #04759b; /* Fondo transparente por defecto */
+    background: #04759b; /* Fondo celeste por defecto */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #fff;
     z-index: 10;
-    transition: background-color 0.3s ease; /* Transición suave para cambios de fondo */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para cambios */
 }
 
-/* Fondo celeste cuando no estamos en Home o al hacer scroll */
+/* Fondo cuando no estamos en Home o al hacer scroll */
 .navbar.scrolled {
-    background: #04759b; /* Fondo celeste cuando se está en una página distinta del Home o al hacer scroll */
+    background: #034d69; /* Fondo más oscuro cuando se hace scroll */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Contenedor del contenido del navbar */
@@ -32,19 +33,18 @@
     align-items: center;
     gap: 10px;
     white-space: nowrap;
-  }
-  
-  .navbar-logo-image {
+}
+
+.navbar-logo-image {
     height: 50px;
     width: auto;
-  }
+}
 
-/* Estilo del título debajo del logo */
 .navbar-logo-title {
     font-size: 1.2rem;
     font-weight: bold;
     color: #ffffff;
-  }
+}
 
 /* Enlaces del navbar */
 .navbar-links {
@@ -59,29 +59,64 @@
     padding: 10px 15px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
 /* Estilo al pasar el cursor sobre los enlaces */
 .navbar-links a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
 }
 
-/* Estilo para el enlace activo */
+/* Enlace activo */
 .active {
     background-color: rgba(255, 255, 255, 0.3);
     color: #f0f0f0;
-    border-radius: 5px;
+}
+
+/* Acciones del navbar */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre la búsqueda y el botón */
+}
+
+/* Estilo del botón de modo oscuro */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color); /* Se adapta al tema actual */
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.2); /* Efecto de escala */
+}
+
+/* Estilo del botón de login administrativo */
+.login-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.2);
+    color: #f1c40f; /* Color de realce al pasar el cursor */
 }
 
 /* Contenedor del buscador */
 .navbar-search {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Alinea el buscador a la derecha */
-    max-width: 300px; /* Ancho máximo para el buscador */
+    max-width: 300px;
     width: 100%;
     position: relative; /* Para posicionar los resultados */
+    gap: 0;
 }
 
 /* Estilo del campo de búsqueda */
@@ -94,7 +129,6 @@
     flex: 1;
 }
 
-/* Botón de búsqueda */
 .search-button {
     padding: 5.5px 10px;
     background-color: #ffffff;
@@ -102,72 +136,57 @@
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: auto;
 }
 
-/* Estilo al pasar el cursor sobre el botón de búsqueda */
 .search-button:hover {
     background-color: #e0e0e0;
 }
 
-/* Resultados de búsqueda */
-.search-results {
-    position: absolute;
-    top: 100%; /* Debajo del buscador */
-    left: 0;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    width: 100%;
-    z-index: 1000;
-    padding: 10px;
-    max-height: 200px;
-    overflow-y: auto; /* Scroll si hay demasiados resultados */
-}
-
-.search-results ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.search-results li {
-    margin: 5px 0;
-}
-
-.search-results li a {
-    text-decoration: none;
-    color: #3498db;
-    display: block;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.search-results li a:hover {
-    background-color: #f0f0f0;
-    color: #2980b9;
-}
-
-/* Modo oscuro: Mantener transparencia por defecto */
+/* Modo oscuro: Fondo transparente y texto legible */
 body.dark-mode .navbar {
-    background: rgb(0, 0, 0); /* Fondo transparente en modo oscuro */
-    color: #fff; /* Asegúrate de que el texto sea legible */
+    background: #000;
+    color: #fff;
 }
 
-.navbar-login-icon {
-    font-size: 24px;
-    color: var(--text-color);
+/* Botón de login administrativo */
+.login-button {
+    background: none;
+    border: none;
     cursor: pointer;
-    margin-left: 10px;
-  }
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.2); /* Efecto de escala */
+}
+
+/* Estilo del ícono de llave inglesa */
+/* Estilo del ícono de llave inglesa */
+.wrench-icon {
+    color: #f1c40f; /* Color amarillo */
+    stroke: black; /* Borde negro */
+    stroke-width: 1.5; /* Grosor del borde */
+    fill: #f1c40f; /* Relleno amarillo */
+    width: 34px; /* Tamaño ampliado */
+    height: 34px; /* Tamaño ampliado */
+    transition: transform 0.3s ease, color 0.3s ease;
+   
+}
+
+.wrench-icon:hover {
+    color: #3498db; /* Cambia a azul al pasar el mouse */
+    fill: #3498db; /* Relleno azul */
+    stroke: black; /* Mantiene el borde negro */
+}
 
 
-/* Vista celular (responsive) */
+
+/* Vista móvil */
 @media (max-width: 900px) {
     .navbar {
-        background: #04759b; /* Fondo celeste en vista celular */
-        flex-direction: column; /* Poner el contenido del navbar en columna */
-        align-items: center; /* Centrar el contenido horizontalmente */
+        background: #04759b;
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-container {
@@ -177,31 +196,26 @@ body.dark-mode .navbar {
     }
 
     .navbar-logo {
-        flex-direction: column; /* Cambia el logo y texto a formato vertical */
-        align-items: center; /* Centra el contenido */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         margin-bottom: 10px;
     }
 
     .navbar-logo-image {
-        height: 70px; /* Aumenta el tamaño del logo */
-        margin-bottom: 10px; /* Espacio debajo del logo */
-      }
-
-    .navbar-logo a {
-        font-size: 1rem; /* Ajustar el tamaño del texto debajo del logo */
-        margin-top: 5px; /* Añadir espacio entre el logo y el texto */
+        height: 70px;
+        margin-bottom: 10px;
     }
 
     .navbar-links {
         flex-direction: column;
-        align-items: center; /* Centrar enlaces horizontalmente */
+        align-items: center;
         width: 100%;
     }
 
     .navbar-links a {
         width: 100%;
-        text-align: center; /* Centrar el texto */
+        text-align: center;
     }
 
     .navbar-search {
@@ -211,26 +225,5 @@ body.dark-mode .navbar {
 
     .search-input {
         width: calc(100% - 50px);
-        flex: 1;
     }
-}
-
-/* Acciones del navbar */
-.navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaciado entre la búsqueda y el botón */
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color); /* Se adapta al tema actual */
-    transition: transform 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    transform: scale(1.2); /* Efecto al pasar el mouse */
 }
