@@ -85,6 +85,22 @@ const Administrador = () => {
     }
   };
 
+  // Eliminar un usuario
+  const eliminarUsuario = async (id) => {
+    if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return;
+    try {
+      const response = await fetch(`${API_URL}/auth/usuarios/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) throw new Error("Error al eliminar el usuario");
+      alert("Usuario eliminado con éxito");
+      cargarUsuarios(); // Recargar la lista de usuarios
+    } catch (error) {
+      console.error("Error al eliminar usuario:", error);
+      alert("Error al eliminar el usuario");
+    }
+  };
+
   // Modificar la versión de un parámetro existente
   const modificarParametro = async () => {
     console.log("Enviando datos:", adminParams);
@@ -205,6 +221,7 @@ const Administrador = () => {
               <th>Nombre</th>
               <th>Email</th>
               <th>Fecha Creación</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -215,6 +232,14 @@ const Administrador = () => {
                 <td>{usuario.nombre}</td>
                 <td>{usuario.email}</td>
                 <td>{new Date(usuario.fecha_creacion).toLocaleString()}</td>
+                <td>
+                  <button
+                    onClick={() => eliminarUsuario(usuario.id)}
+                    className="btn-eliminar"
+                  >
+                    Eliminar
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
