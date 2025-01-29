@@ -42,12 +42,12 @@ const Administrador = () => {
   // Obtener lista de parámetros
   const cargarParametros = async () => {
     try {
-      const response = await fetch(`${API_URL}/admin/params`);
+      const response = await fetch(`${API_URL}/auth/params`);
       if (!response.ok) throw new Error("Error al cargar parámetros");
       const data = await response.json();
       setParametros(data);
     } catch (error) {
-      console.error(error);
+      console.error("Error al cargar parámetros:", error);
       alert("Error al cargar parámetros");
     }
   };
@@ -87,31 +87,34 @@ const Administrador = () => {
 
   // Modificar la versión de un parámetro existente
   const modificarParametro = async () => {
-    console.log("Enviando datos:", adminParams); // Verifica qué datos se están enviando
+    console.log("Enviando datos:", adminParams);
     try {
-      const response = await fetch("http://127.0.0.1:5000/auth/admin/params", {
+      const response = await fetch(`${API_URL}/auth/admin/params`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(adminParams), // Datos enviados
+        body: JSON.stringify(adminParams),
       });
-  
+
       if (!response.ok) {
         const error = await response.json();
         console.error("Error en la respuesta:", error);
         throw new Error("Error al modificar el parámetro");
       }
-  
+
       const data = await response.json();
       alert("Parámetro actualizado con éxito: " + data.message);
+
+      // Actualizar lista de parámetros en el estado con los datos recibidos
+      if (data.parametros) {
+        setParametros(data.parametros); // Actualizar la lista en el frontend
+      }
     } catch (error) {
       console.error("Error al modificar parámetro desde React:", error);
       alert("Error al modificar el parámetro");
     }
   };
-  
-  
 
   return (
     <div className="container">
