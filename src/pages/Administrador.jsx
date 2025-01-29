@@ -16,7 +16,6 @@ const Administrador = () => {
   const [adminParams, setAdminParams] = useState({
     serie: "",
     version: "",
-    letra: "",
   });
 
   const [parametros, setParametros] = useState([]); // Para almacenar los parámetros obtenidos
@@ -70,9 +69,7 @@ const Administrador = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nuevoUsuario),
-        
       });
-      console.log("Datos enviados:", nuevoUsuario);
       if (!response.ok) {
         const error = await response.json();
         alert(error.error);
@@ -88,6 +85,34 @@ const Administrador = () => {
     }
   };
 
+  // Modificar la versión de un parámetro existente
+  const modificarParametro = async () => {
+    console.log("Enviando datos:", adminParams); // Verifica qué datos se están enviando
+    try {
+      const response = await fetch("http://127.0.0.1:5000/auth/admin/params", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(adminParams), // Datos enviados
+      });
+  
+      if (!response.ok) {
+        const error = await response.json();
+        console.error("Error en la respuesta:", error);
+        throw new Error("Error al modificar el parámetro");
+      }
+  
+      const data = await response.json();
+      alert("Parámetro actualizado con éxito: " + data.message);
+    } catch (error) {
+      console.error("Error al modificar parámetro desde React:", error);
+      alert("Error al modificar el parámetro");
+    }
+  };
+  
+  
+
   return (
     <div className="container">
       <h1>Panel de Administración</h1>
@@ -96,29 +121,32 @@ const Administrador = () => {
       <section>
         <h2>Modificar Parámetros del Administrador</h2>
         <div className="form-grid">
-          <input
+          <select
             name="serie"
-            placeholder="Serie"
+            value={adminParams.serie}
             onChange={handleAdminParamsChange}
-          />
+          >
+            <option value="">Seleccione una serie</option>
+            <option value="SERIE A">SERIE A</option>
+            <option value="SERIE BS">SERIE BS</option>
+            <option value="SERIE BM">SERIE BM</option>
+            <option value="SERIE D">SERIE D</option>
+            <option value="SERIE P">SERIE P</option>
+          </select>
           <input
             name="version"
-            placeholder="Versión"
+            placeholder="Nueva Versión"
+            value={adminParams.version}
             onChange={handleAdminParamsChange}
           />
-          <input
-            name="letra"
-            placeholder="Letra"
-            onChange={handleAdminParamsChange}
-          />
-          <button>Modificar Parámetros</button>
+          <button onClick={modificarParametro}>Modificar Parámetro</button>
         </div>
 
         <h3>Lista de Parámetros</h3>
         <ul>
           {parametros.map((param, index) => (
             <li key={index}>
-              {param.serie} - {param.version} - {param.letra}
+              {param.serie} - {param.version}
             </li>
           ))}
         </ul>
