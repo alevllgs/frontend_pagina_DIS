@@ -58,10 +58,13 @@
 
 /* Estilos para el ícono dentro de los botones dentro de .buttons */
 .buttons .icon {
-  font-size: 65px; /* Tamaño más grande de los íconos */
-  color: #ffffff; /* Cambiar color del ícono */
-  margin-bottom: 20px; /* Añadir más espacio debajo del ícono para ajustar la posición del texto */
+  font-size: 65px; /* Tamaño del ícono */
+  color: #ffffff; /* Color del ícono */
+  margin-bottom: 20px; /* Espacio debajo */
+  -webkit-text-stroke: 1px #444; /* Contorno negro de 2px */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra con leve desenfoque */
 }
+
 
 /* Estilos para el título dentro de los botones dentro de .buttons */
 .buttons .title {

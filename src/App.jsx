@@ -27,15 +27,8 @@ const App = () => {
         {/* Ruta para Home */}
         <Route path={routes.home} element={<Home />} />
         
-        {/* Ruta protegida para "Quiénes Somos" */}
-        <Route
-          path={routes.quienesSomos}
-          element={
-            <ProtectedRoute>
-              <QuienesSomos />
-            </ProtectedRoute>
-          }
-        />
+        {/* Ruta para "Quiénes Somos" */}
+        <Route path={routes.quienesSomos} element={<QuienesSomos />} />
         
         {/* Ruta para Documentos */}
         <Route path={routes.documentos} element={<Documentos />} />

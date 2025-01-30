@@ -3,9 +3,7 @@ import "../styles/CreaBanner.css"; // Asegúrate de tener este archivo CSS para 
 
 const banners = [
   "public/img/banner/banner1.jpg",
-  "public/img/banner/banner2.jpg",
-  "public/img/banner/banner3.jpg",
-  "public/img/banner/banner4.jpg",
+  // Agrega más rutas de imágenes si es necesario
 ];
 
 const CreaBanner = () => {
@@ -25,6 +23,16 @@ const CreaBanner = () => {
         alt="Banner"
         className="banner-image"
       />
+      {/* Texto superpuesto */}
+      <div className="banner-text">
+       
+        <p>
+          Bienvenido al sitio web del Departamento de Información Sanitaria (DIS) del Servicio de
+          Salud Metropolitano Oriente (SSMO). Aquí podrá encontrar información relevante generada por
+          los distintos establecimientos pertenecientes al SSMO, la cual se irá actualizando
+          periódicamente.
+        </p>
+      </div>
     </div>
   );
 };
