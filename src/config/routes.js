@@ -2,6 +2,7 @@ export const routes = {
   home: "/",
   quienesSomos: "/quienes-somos",
   documentos: "/documentos",
+  gestionClinicaFinanciera: "/gestion_clinica_financiera",
   ges: "/ges",
   rem: "/rem",
   remLogin: "/rem_login",
@@ -11,4 +12,5 @@ export const routes = {
   validador: "/validador",
   administrador: "/administrador",
   adminLogin: "/admin_login", // Login administrativo
+  linksInteres: "/links_interes",
 };

@@ -13,6 +13,7 @@ import SubirRem from "./pages/RemProtegido"; // Página para subir archivos REM
 import GesProtegido from "./pages/GesProtegido"; // Página protegida GES
 import AdminLogin from "./pages/AdminLogin"; // Nueva página para login administrativo
 import Administrador from "./pages/Administrador"; // Página protegida para administradores
+import LinksInteres from "./pages/LinksInteres";
 
 // Importar las rutas centralizadas
 import { routes } from "./config/routes";
@@ -29,13 +30,13 @@ const App = () => {
         
         {/* Ruta para "Quiénes Somos" */}
         <Route path={routes.quienesSomos} element={<QuienesSomos />} />
-        
-        {/* Ruta para Documentos */}
         <Route path={routes.documentos} element={<Documentos />} />
+        <Route path={routes.linksInteres} element={<LinksInteres />} />
         
         {/* Rutas para botones principales */}
         <Route path={routes.ges} element={<Ges />} />
         <Route path={routes.rem} element={<Rem />} />
+        <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
         
         {/* Rutas para Registro con redirección específica */}
         <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
