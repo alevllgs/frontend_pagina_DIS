@@ -48,7 +48,6 @@ const Administrador = () => {
       setParametros(data);
     } catch (error) {
       console.error("Error al cargar parámetros:", error);
-      alert("Error al cargar parámetros");
     }
   };
 
