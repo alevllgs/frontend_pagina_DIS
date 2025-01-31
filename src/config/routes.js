@@ -1,16 +1,23 @@
 export const routes = {
-  home: "/",
+ 
+  home: "/", // Navbar
   quienesSomos: "/quienes-somos",
   documentos: "/documentos",
-  gestionClinicaFinanciera: "/gestion_clinica_financiera",
+  administrador: "/administrador",
+
+  rem: "/rem", // ButtonGroup
   ges: "/ges",
-  rem: "/rem",
-  remLogin: "/rem_login",
-  gesLogin: "/ges_login",
-  subirRem: "/subir_rem",
+  gestionClinicaFinanciera: "/gestion_clinica_financiera",
+  linksInteres: "/links_interes",
+  
+
+  subirRem: "/subir_rem", // Rutas interiores
   gesProtegido: "/ges_protegido",
   validador: "/validador",
-  administrador: "/administrador",
+  
   adminLogin: "/admin_login", // Login administrativo
-  linksInteres: "/links_interes",
+  remLogin: "/rem_login",
+  gesLogin: "/ges_login",
+  
+
 };
