@@ -9,6 +9,7 @@ export const routes = {
   ges: "/ges",
   gestionClinicaFinanciera: "/gestion_clinica_financiera",
   inmunizacion: "/inmunizacion",
+  visorTerritorial: "/visor_territorial",
   linksInteres: "/links_interes",
   
 

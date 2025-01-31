@@ -11,9 +11,13 @@
     "deploy": "vite build && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/icons-material": "^6.4.2",
+    "@mui/material": "^6.4.2",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "lucide-react": "^0.474.0",

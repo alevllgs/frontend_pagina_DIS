@@ -84,6 +84,7 @@ footer {
   background-color: var(--card-background); /* Cambiar fondo según el modo */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: var(--text-color); /* Cambiar texto según el modo */
+  max-height: 150px;
 }
 
 .document-card:hover {

@@ -23,7 +23,7 @@ const ButtonGroup = () => {
       <Button href="https://app.powerbi.com/view?r=eyJrIjoiOWJmNThmNDYtMmU5Mi00MzNiLWJmMzctNmEyZjA2NGY5NWRjIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9" icon="fa-person-walking-arrow-right" title="Mapa de derivación" delay="600" iconColor={palette[2]} /> 
       
       <Button href="gestion_clinica_financiera/" icon="fa-money-check-dollar" title="Gestión Clínica-Financiera" delay="700" iconColor={palette[3]} />
-      <Button href="visores_territoriales/" icon="fa-map-location-dot" title="Visores territoriales" delay="1200" iconColor={palette[4]} /> 
+      <Button href="visor_territorial/" icon="fa-map-location-dot" title="Visores territoriales" delay="1200" iconColor={palette[4]} /> 
       <Button href="poblacion/" icon="fa-people-group" title="Población" delay="400" iconColor={palette[4]} />
       <Button href="links_interes/" icon="fa-link" title="Links de interés" delay="400" iconColor={palette[0]} />
     </div>
