@@ -14,7 +14,7 @@ const Rem = () => {
           <Button
             href="https://dis.saludoriente.cl/degidssmo/intranet/index.php"
             icon="fa-list"
-            title="Repositorio REM"
+            title="Repositorio REM [Intranet]"
             delay="100"
             iconColor="#ff6b6b"
           />
