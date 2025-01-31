@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* Estilos para el grupo de botones */
-.buttons {
+.buttons_int {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 botones por fila */
   gap: 30px; /* Espaciado entre botones */
@@ -31,7 +31,7 @@
 }
 
 /* Estilos para cada botón individual dentro de .buttons */
-.buttons .button {
+.buttons_int .button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,14 +50,14 @@
 }
 
 /* Estilo para el hover de los botones dentro de .buttons */
-.buttons .button:hover {
+.buttons_int .button:hover {
   background: var(--valor-gradiente-inv); /* Cambiar el degradado al pasar el mouse */
   transform: scale(1.05); /* Aumentar ligeramente el tamaño */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el mouse */
 }
 
 /* Estilos para el ícono dentro de los botones dentro de .buttons */
-.buttons .icon {
+.buttons_int .icon {
   font-size: 65px; /* Tamaño del ícono */
   color: #ffffff; /* Color del ícono */
   margin-bottom: 20px; /* Espacio debajo */
@@ -67,7 +67,7 @@
 
 
 /* Estilos para el título dentro de los botones dentro de .buttons */
-.buttons .title {
+.buttons_int .title {
   margin-top: auto; /* Asegurar que el título se quede al fondo del botón */
   font-size: 13.5px; /* Reducir el tamaño de la letra */
   font-weight: 600; /* Hacer la letra más gruesa */
@@ -75,7 +75,7 @@
 
 /* Vista celular (responsive) */
 @media (max-width: 768px) {
-  .buttons {
+  .buttons_int {
     grid-template-columns: repeat(2, 1fr); /* Mostrar 2 botones por fila en pantallas pequeñas */
     margin-left: 5%;
     margin-right: 5%;
@@ -83,7 +83,7 @@
     padding: 10px;
   }
 
-  .buttons .button {
+  .buttons_int .button {
     width: 85%; /* Hacer que los botones ocupen todo el ancho disponible */
   }
 }

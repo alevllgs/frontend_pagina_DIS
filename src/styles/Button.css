@@ -69,7 +69,7 @@
 /* Estilos para el título dentro de los botones dentro de .buttons */
 .buttons .title {
   margin-top: auto; /* Asegurar que el título se quede al fondo del botón */
-  font-size: 15px; /* Reducir el tamaño de la letra */
+  font-size: 16px; /* Reducir el tamaño de la letra */
   font-weight: 600; /* Hacer la letra más gruesa */
 }
 

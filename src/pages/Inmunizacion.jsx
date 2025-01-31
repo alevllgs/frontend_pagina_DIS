@@ -10,7 +10,7 @@ const Inmunizacion = () => {
       {/* Columna izquierda: Botones y secciones GES */}
       <div className="ges-page">
         <h1>Informes BI</h1>
-        <div className="buttons">
+        <div className="buttons_int">
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiYWYwYTVmZjMtYWY3ZS00MzY1LTkzNjUtZmE1ZDhhNmNkNDIxIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-vial-virus"
