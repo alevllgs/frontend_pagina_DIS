@@ -19,7 +19,7 @@ const ButtonGroup = () => {
       <Button href="produccion_hospitalaria/" icon="fa-hospital" title="Producción Hospitalaria" delay="800" iconColor={palette[4]} /> 
       <Button href="produccion_ambulatoria/" icon="fa-house-medical" title="Producción APS" delay="800" iconColor={palette[4]} /> 
       <Button href="at_urgencia/" icon="fa-ambulance" title="Atenciones de Urgencia" delay="800" iconColor={palette[4]} /> 
-      <Button href="inmunizaciones/" icon="fa-syringe" title="Inmunización" delay="500" iconColor={palette[1]} /> 
+      <Button href="inmunizacion/" icon="fa-syringe" title="Inmunización" delay="500" iconColor={palette[1]} /> 
       <Button href="https://app.powerbi.com/view?r=eyJrIjoiOWJmNThmNDYtMmU5Mi00MzNiLWJmMzctNmEyZjA2NGY5NWRjIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9" icon="fa-person-walking-arrow-right" title="Mapa de derivación" delay="600" iconColor={palette[2]} /> 
       
       <Button href="gestion_clinica_financiera/" icon="fa-money-check-dollar" title="Gestión Clínica-Financiera" delay="700" iconColor={palette[3]} />

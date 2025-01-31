@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
 import Rem from "./pages/Rem"; // Página REM
+import Inmunizacion from "./pages/Inmunizacion"; // Página GES
 import Registro from "./components/Registro"; // Formulario de login general
 import Validador from "./pages/Validador"; // Página del validador
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -37,6 +38,7 @@ const App = () => {
         <Route path={routes.ges} element={<Ges />} />
         <Route path={routes.rem} element={<Rem />} />
         <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
+        <Route path={routes.inmunizacion} element={<Inmunizacion />} />
         
         {/* Rutas para Registro con redirección específica */}
         <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
