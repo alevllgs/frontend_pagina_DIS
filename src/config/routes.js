@@ -7,6 +7,7 @@ export const routes = {
 
   rem: "/rem", // ButtonGroup
   ges: "/ges",
+  listaEspera: "/lista_espera",
   gestionClinicaFinanciera: "/gestion_clinica_financiera",
   inmunizacion: "/inmunizacion",
   visorTerritorial: "/visor_territorial",

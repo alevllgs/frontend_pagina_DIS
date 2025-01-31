@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
 import Rem from "./pages/Rem"; // Página REM
+import ListaEspera from "./pages/ListaEspera"; // Página REM
 import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 import Inmunizacion from "./pages/Inmunizacion"; // Página GES
 import VisorTerritorial from "./pages/VisorTerritorial"; // Página GES
@@ -42,6 +43,7 @@ const App = () => {
         {/* Rutas para botones principales */}
         <Route path={routes.ges} element={<Ges />} />
         <Route path={routes.rem} element={<Rem />} />
+        <Route path={routes.listaEspera} element={<ListaEspera />} />
         <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
         <Route path={routes.visorTerritorial} element={<VisorTerritorial />} />
         <Route path={routes.inmunizacion} element={<Inmunizacion />} />
