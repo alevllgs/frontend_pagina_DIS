@@ -10,6 +10,7 @@ import ListaEspera from "./pages/ListaEspera"; // Página REM
 import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 import Inmunizacion from "./pages/Inmunizacion"; // Página GES
 import VisorTerritorial from "./pages/VisorTerritorial"; // Página GES
+import ControlGestion from "./pages/ControlGestion"; // Página GESTION
 import LinksInteres from "./pages/LinksInteres";
 
 import Registro from "./components/Registro"; // Formulario de login general
@@ -45,6 +46,7 @@ const App = () => {
         <Route path={routes.rem} element={<Rem />} />
         <Route path={routes.listaEspera} element={<ListaEspera />} />
         <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
+        <Route path={routes.controlGestion} element={<ControlGestion />} />
         <Route path={routes.visorTerritorial} element={<VisorTerritorial />} />
         <Route path={routes.inmunizacion} element={<Inmunizacion />} />
         

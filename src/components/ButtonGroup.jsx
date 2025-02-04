@@ -25,6 +25,7 @@ const ButtonGroup = () => {
       <Button href="gestion_clinica_financiera/" icon="fa-money-check-dollar" title="Gestión Clínica-Financiera" delay="700" iconColor={palette[3]} />
       <Button href="visor_territorial/" icon="fa-map-location-dot" title="Visores territoriales" delay="1200" iconColor={palette[4]} /> 
       <Button href="poblacion/" icon="fa-people-group" title="Población" delay="400" iconColor={palette[4]} />
+      <Button href="control_gestion/" icon="fa-magnifying-glass-chart" title="Control de Gestión" delay="400" iconColor={palette[1]} />
       <Button href="links_interes/" icon="fa-link" title="Links de interés" delay="400" iconColor={palette[0]} />
     </div>
   );

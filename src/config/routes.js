@@ -11,6 +11,7 @@ export const routes = {
   gestionClinicaFinanciera: "/gestion_clinica_financiera",
   inmunizacion: "/inmunizacion",
   visorTerritorial: "/visor_territorial",
+  controlGestion: "/control_gestion",
   linksInteres: "/links_interes",
   
 
