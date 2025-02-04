@@ -58,6 +58,9 @@ const Navbar = () => {
           <NavLink to="/documentos" activeClassName="active">
             Documentos
           </NavLink>
+          <NavLink to="/contacto" activeClassName="active">
+            Contacto
+          </NavLink>
           {rol === "admin" && (
             <NavLink to="/administrador" activeClassName="active">
               Administrador

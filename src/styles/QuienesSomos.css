@@ -1,41 +1,112 @@
-/* src/styles/QuienesSomos.css */
-
-/* Texto de la sección Quiénes Somos */
-.texto_quienes_somos {
-  background-color: blue;
-  margin: 20px;
+/* Contenedor general con grid */
+.quienes-somos-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Encabezado, contenido dinámico y footer */
+  min-height: 100vh; /* Asegurar que cubra toda la pantalla */
+  box-sizing: border-box;
 }
 
-/* Contenedor de las tarjetas */
+/* Título principal */
+.titulo-principal {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #004085;
+  margin-bottom: 20px;
+}
+
+/* Sección de texto */
+.texto_quienes_somos {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: justify;
+}
+
+/* Sección de organigrama */
+.organigrama-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.organigrama-imagen {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección Nuestro Equipo */
+.nuestro-equipo {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: var(--text-color);
+}
+
+/* Contenedor de tarjetas */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-top: 30px;
 }
 
+/* Tarjeta */
 .card-item {
-  flex: 0 1 calc(25% - 40px); /* Ajuste para mostrar 4 tarjetas por fila */
+  flex: 0 1 calc(25% - 40px);
   max-width: calc(25% - 40px);
   margin: 10px;
   box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  color: var(--text-color);
 }
 
+.card-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen de la tarjeta */
 .card-image {
   width: 100%;
-  height: 250px; /* Mantener la imagen cuadrada */
+  height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Vista celular (max-width de 768px) */
+/* Footer Fijo en la última fila */
+footer {
+  background-color: var(--card-background);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: var(--text-color);
+  width: 100%;
+  grid-row: 3; /* Lo coloca en la última fila de la grid */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .card-item {
-    flex: 1 1 100%; /* Mostrar solo 1 tarjeta por fila en pantallas pequeñas */
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+  }
+
+  .organigrama-imagen {
     max-width: 100%;
   }
 }
 
-/* Vista para pantallas grandes (min-width de 1200px) */
 @media (min-width: 1200px) {
   .cards-container {
     max-width: 90%;
