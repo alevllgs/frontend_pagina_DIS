@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer"; // Importar el Footer
 import { useUser } from "../context/UserContext"; // Importar el contexto de usuario
 import "../styles/RemProtegido.css"; // Importar los estilos específicos para este componente
@@ -10,6 +10,15 @@ const RemProtegido = () => {
   const [anio, setAnio] = useState("2024"); // Estado para el año seleccionado
   const [mes, setMes] = useState("01"); // Estado para el mes seleccionado
   const [message, setMessage] = useState(""); // Estado para mensajes
+  const [registros, setRegistros] = useState([]); // Estado para almacenar los registros subidos
+
+  // Obtener registros de archivos subidos desde el backend
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/registros")
+      .then((response) => response.json())
+      .then((data) => setRegistros(data))
+      .catch((error) => console.error("Error al obtener registros:", error));
+  }, []);
 
   // Manejo del cambio de archivos
   const handleFileChange = (e) => {
@@ -31,7 +40,9 @@ const RemProtegido = () => {
     }
 
     if (!email) {
-      alert("El correo del usuario no está disponible. Por favor, inicia sesión.");
+      alert(
+        "El correo del usuario no está disponible. Por favor, inicia sesión."
+      );
       return;
     }
 
@@ -53,6 +64,10 @@ const RemProtegido = () => {
       if (response.ok) {
         const result = await response.json();
         setMessage("Archivos subidos con éxito.");
+
+        // Agregar el nuevo registro a la tabla de registros
+        setRegistros([...registros, result.data]);
+
         console.log(result);
       } else {
         const errorData = await response.json();
@@ -66,72 +81,102 @@ const RemProtegido = () => {
 
   return (
     <div className="form-page">
-      <div className="form-container">
-        <h1>Subir Archivos REM</h1>
-        <form onSubmit={handleSubmit}>
-          {/* Lista desplegable para Serie REM */}
-          <div className="desplegable">
-            <div className="desplegable_orientacion">
-              <label htmlFor="serie">Serie REM:</label>
-              <select id="serie" value={serie} onChange={handleSerieChange}>
-                <option value="SERIE A">SERIE A</option>
-                <option value="SERIE BS">SERIE BS</option>
-                <option value="SERIE BM">SERIE BM</option>
-                <option value="SERIE D">SERIE D</option>
-                <option value="SERIE P">SERIE P</option>
-              </select>
-            </div>
+      <div className="dos-columnas">
+        <div className="form-container">
+          <h1>Subir Archivos REM</h1>
+          <form onSubmit={handleSubmit}>
+            {/* Lista desplegable para Serie REM */}
+            <div className="desplegable">
+              <div className="desplegable_orientacion">
+                <label htmlFor="serie">Serie REM:</label>
+                <select id="serie" value={serie} onChange={handleSerieChange}>
+                  <option value="SERIE A">SERIE A</option>
+                  <option value="SERIE BS">SERIE BS</option>
+                  <option value="SERIE BM">SERIE BM</option>
+                  <option value="SERIE D">SERIE D</option>
+                  <option value="SERIE P">SERIE P</option>
+                </select>
+              </div>
 
-            {/* Lista desplegable para Año */}
-            <div className="desplegable_orientacion">
-              <label htmlFor="anio">Año:</label>
-              <select id="anio" value={anio} onChange={handleAnioChange}>
-                {!anio && (
-                  <option value="" disabled hidden>
-                    Selecciona un año
+              {/* Lista desplegable para Año */}
+              <div className="desplegable_orientacion">
+                <label htmlFor="anio">Año:</label>
+                <select id="anio" value={anio} onChange={handleAnioChange}>
+                  {!anio && (
+                    <option value="" disabled hidden>
+                      Selecciona un año
+                    </option>
+                  )}
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                </select>
+              </div>
+
+              {/* Lista desplegable para Mes */}
+              <div className="desplegable_orientacion">
+                <label htmlFor="mes">Mes:</label>
+                <select id="mes" value={mes} onChange={handleMesChange}>
+                  <option value="" disabled>
+                    Selecciona el mes a subir
                   </option>
-                )}
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-              </select>
+                  <option value="01">Enero</option>
+                  <option value="02">Febrero</option>
+                  <option value="03">Marzo</option>
+                  <option value="04">Abril</option>
+                  <option value="05">Mayo</option>
+                  <option value="06">Junio</option>
+                  <option value="07">Julio</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Septiembre</option>
+                  <option value="10">Octubre</option>
+                  <option value="11">Noviembre</option>
+                  <option value="12">Diciembre</option>
+                </select>
+              </div>
             </div>
 
-            {/* Lista desplegable para Mes */}
-            <div className="desplegable_orientacion">
-              <label htmlFor="mes">Mes:</label>
-              <select id="mes" value={mes} onChange={handleMesChange}>
-                <option value="" disabled>
-                  Selecciona el mes a subir
-                </option>
-                <option value="01">Enero</option>
-                <option value="02">Febrero</option>
-                <option value="03">Marzo</option>
-                <option value="04">Abril</option>
-                <option value="05">Mayo</option>
-                <option value="06">Junio</option>
-                <option value="07">Julio</option>
-                <option value="08">Agosto</option>
-                <option value="09">Septiembre</option>
-                <option value="10">Octubre</option>
-                <option value="11">Noviembre</option>
-                <option value="12">Diciembre</option>
-              </select>
+            <div className="subida">
+              <input
+                type="file"
+                multiple
+                accept=".xlsx,.xlsm"
+                onChange={handleFileChange}
+              />
+              <button type="submit">Subir Archivos</button>
             </div>
-          </div>
-
-          <div className="subida">
-            <input
-              type="file"
-              multiple
-              accept=".xlsx,.xlsm"
-              onChange={handleFileChange}
-            />
-            <button type="submit">Subir Archivos</button>
-          </div>
-        </form>
-        {message && <p className="message">{message}</p>}
+          </form>
+          {message && <p className="message">{message}</p>}
+        </div>
+        <div className="registros-subidos">
+          {/* Tabla de registros subidos */}
+          <h2>Registros Subidos</h2>
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Establecimiento</th>
+                <th>Serie</th>
+                <th>Año</th>
+                <th>Mes</th>
+                <th>Fecha de Recepción</th>
+              </tr>
+            </thead>
+            <tbody>
+              {registros.map((registro, index) => (
+                <tr key={index}>
+                  <td>{registro.usuario}</td>
+                  <td>{registro.establecimiento}</td>
+                  <td>{registro.serie}</td>
+                  <td>{registro.anio}</td>
+                  <td>{registro.mes}</td>
+                  <td>{new Date(registro.fecha_recepcion).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <Footer />
     </div>

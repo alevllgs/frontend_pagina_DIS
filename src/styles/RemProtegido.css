@@ -78,6 +78,12 @@ footer {
   background-color: var(--card-background); /* Cambiar según el modo */
 }
 
+.dos-columnas{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 /* Título dentro de document-container */
 .document-container h2 {
   text-align: center;
