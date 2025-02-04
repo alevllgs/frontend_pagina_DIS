@@ -11,7 +11,7 @@ function QuienesSomos() {
         <h1 className="titulo-principal">
           Departamento de Información Sanitaria
         </h1>
-        <h2>Quiénes Somos</h2>
+        <h2 className="titulo-secundario">Quiénes Somos</h2>
         <p>
           Nuestro Departamento depende de la Subdirección de Gestión Asistencial
           del SSMO y está compuesto por profesionales de ámbitos
@@ -20,7 +20,7 @@ function QuienesSomos() {
           generar y gestionar información de calidad para nuestro Servicio.
         </p>
 
-        <h2>Mision</h2>
+        <h2 className="titulo-secundario">Mision</h2>
         <p>
           Ser un departamento de apoyo continuo a la gestión del SSMO
           disponiendo para los requirentes internos y externos de información en
@@ -41,7 +41,7 @@ function QuienesSomos() {
           a los cambios que impone el medio externo.
         </p>
 
-        <h2>Organigrama</h2>
+        <h2 className="titulo-secundario">Organigrama</h2>
         <div className="organigrama-container">
           <img
             src="/img/quienes_somos/organigrama_2.jpg"
