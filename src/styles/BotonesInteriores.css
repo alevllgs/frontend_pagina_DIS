@@ -40,12 +40,11 @@
   background: var(--valor-gradiente);
   border-radius: 15px;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  width: 150px;
+  width: 160px;
   height: 180px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   color: #ffffff;
-  padding: 20px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -60,7 +59,7 @@
 .buttons_int .icon {
   font-size: 65px; /* Tamaño del ícono */
   color: #ffffff; /* Color del ícono */
-  margin-bottom: 20px; /* Espacio debajo */
+
   -webkit-text-stroke: 1px #444; /* Contorno negro de 2px */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra con leve desenfoque */
 }
@@ -84,6 +83,6 @@
   }
 
   .buttons_int .button {
-    width: 85%; /* Hacer que los botones ocupen todo el ancho disponible */
+    width: 80%; /* Hacer que los botones ocupen todo el ancho disponible */
   }
 }
