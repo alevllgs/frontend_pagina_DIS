@@ -26,6 +26,7 @@ import Administrador from "./pages/Administrador"; // Página protegida para adm
 
 // Importar las rutas centralizadas
 import { routes } from "./config/routes";
+import ActividadesAps from "./pages/ActividadesAps";
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
         <Route path={routes.ges} element={<Ges />} />
         <Route path={routes.rem} element={<Rem />} />
         <Route path={routes.listaEspera} element={<ListaEspera />} />
+        <Route path={routes.actividadesAps} element={<ActividadesAps />} />
         <Route path={routes.comges} element={<Comges />} />
         <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
         <Route path={routes.controlGestion} element={<ControlGestion />} />

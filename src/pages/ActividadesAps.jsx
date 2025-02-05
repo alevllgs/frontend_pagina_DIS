@@ -4,78 +4,54 @@ import Footer from "../components/Footer"; // Importar el Footer
 import "../styles/BotonesInteriores.css"; // Reutilizamos los estilos existentes
 import "../styles/Ges.css"; // Reutilizamos los estilos existentes
 
-const Comges = () => {
+const ActividadesAps = () => {
   return (
     <div className="layout-container">
       {/* Columna izquierda: Botones y secciones GES */}
       <div className="ges-page">
-        <h1>Monitoreo indicadores COMGES</h1>
+        <h1>Monitoreo actividades APS</h1>
         <div className="buttons_int">
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiZmE1NDFhMmYtYjM2NS00NDdkLTlmMjktNzM0ZGQxOTQ1ZmUyIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiZWMzMGU5N2MtOTkyMi00NTg5LTk5OTItZmMwZGI1NTA2MzBiIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="clinical_notes"
-            title="COMGES 1.1: Proceso Ambulatorio"
+            title="Monitoreo IAAPS"
             delay="100"
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYzRkZGFjNGQtMTUwYS00YWZlLTgyMjktMmM3NDY1ZGFjYTVmIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="format_list_numbered"
-            title="COMGES: Lista de Espera No GES"
+            href="https://app.powerbi.com/view?r=eyJrIjoiNjM5YTZkMDMtNDg2Yi00ODgxLTkxOTAtMGM3ZTI1OThjYjhlIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="flowsheet"
+            title="Metas Sanitarias APS"
             delay="200"
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiZmEyZWI5YmQtYmMxNi00YWEwLWE2ODQtNzExYjhjOGQ0NGEzIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="elderly_woman"
-            title="COMGES 8.1: Acciones para el Cuidado Integral de Personas 65 años y más"
+            href="https://app.powerbi.com/view?r=eyJrIjoiZmU5NTc0ZmEtMzlhYi00MmFhLWEwNzUtOTk5Y2RjOWMzNGM4IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="patient_list"
+            title="Programa Atencion Domiciliaria a Personas con Dependencia Severa"
             delay="300"
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiZWU4MDcxMzctYjZlZS00ZjNkLTlmNzEtZWM5Yzg2NGY5YTJjIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="real_estate_agent"
-            title="COMGES 8.2: Atencion Domiciliaria Dependencia Severa"
+            href="https://app.powerbi.com/view?r=eyJrIjoiOWQ1MTc3ZmItNzdjNC00NjYzLWEyZTAtMzdiNDQ5ODM3MDZiIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="ambulance"
+            title="Programa SAPU"
             delay="300"
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYzBmZjMwYmEtYWUyYy00Yjc5LWE5NmYtN2NlMmNmNmMyYzU4IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="emergency"
-            title="COMGES 9.2: Usuarios que abonan la Urgencia Hospitarlaria"
+            href="https://app.powerbi.com/view?r=eyJrIjoiZWZkNDg3ZTgtOTRjNC00YjFlLWIxZWYtNzMyZjRkMWY1YTE1IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="radiology"
+            title="Programa SAR"
             delay="300"
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
 
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiNzFiOGZmMWItZWUzNC00NmYwLWEzYTMtNDlhMzNmYzJmMDQ4IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="model_training"
-            title="COMGES 10.1: Gestión y Eficiencia del Proceso de Hospitalización"
-            delay="300"
-            iconColor="#ff6b6b"
-            isMaterialSymbol={true} // Si es Google Icons
-          />
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYWNjMDExM2UtZTQzNC00N2Y3LTkyYzktNDYxNzdmMGRlNWI1IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="home_health"
-            title="COMGES 10.3: Hospitalizacion Domiciliaria"
-            delay="200"
-            iconColor="#ff6b6b"
-            isMaterialSymbol={true} // Si es Google Icons
-          />
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYjNhMTAyYmQtZDE5Ny00YTAxLWE0ZTItMjliOTQwNGViYWIzIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="Surgical"
-            title="COMGES 11: Proceso Quirúrgico"
-            delay="300"
-            iconColor="#ff6b6b"
-            isMaterialSymbol={true} // Si es Google Icons
-          />
  
         </div>
       </div>
@@ -147,4 +123,4 @@ const Comges = () => {
   );
 };
 
-export default Comges;
+export default ActividadesAps;
