@@ -13,13 +13,28 @@ const RemProtegido = () => {
   const [registros, setRegistros] = useState([]); // Estado para almacenar los registros subidos
 
   // Obtener registros de archivos subidos desde el backend
+  const fetchRegistros = async () => {
+    try {
+      if (!email) return;
+  
+      const response = await fetch(`http://127.0.0.1:5000/upload/registros?email=${encodeURIComponent(email)}`);
+      if (!response.ok) throw new Error("Error en la respuesta del servidor");
+  
+      const data = await response.json();
+      console.log("🔹 Datos recibidos en React:", data);
+      setRegistros(data);  // SOLO SE USAN DATOS DE SQL
+    } catch (error) {
+      console.error("Error obteniendo registros:", error);
+      setMessage("Error cargando registros");
+    }
+  };
+  
+  // 🔹 Cargar registros al montar el componente
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/registros")
-      .then((response) => response.json())
-      .then((data) => setRegistros(data))
-      .catch((error) => console.error("Error al obtener registros:", error));
-  }, []);
-
+    fetchRegistros();
+  }, [email]);
+  
+  
   // Manejo del cambio de archivos
   const handleFileChange = (e) => {
     setFiles(e.target.files);
@@ -33,51 +48,39 @@ const RemProtegido = () => {
   // Envío de archivos al backend
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (files.length === 0) {
-      alert("Por favor, selecciona al menos un archivo.");
+  
+    if (!files.length || !email) {
+      alert("Selecciona archivo y verifica tu sesión");
       return;
     }
-
-    if (!email) {
-      alert(
-        "El correo del usuario no está disponible. Por favor, inicia sesión."
-      );
-      return;
-    }
-
+  
     const formData = new FormData();
-    for (let i = 0; i < files.length; i++) {
-      formData.append("file", files[i]); // ¡El nombre es importante!
-    }
-    formData.append("email", email); // Añadir el correo al formulario
+    formData.append("file", files[0]); // Solo un archivo
+    formData.append("email", email);
     formData.append("serie", serie);
     formData.append("anio", anio);
     formData.append("mes", mes);
-
+  
     try {
       const response = await fetch("http://127.0.0.1:5000/upload/", {
         method: "POST",
         body: formData,
       });
-
-      if (response.ok) {
-        const result = await response.json();
-        setMessage("Archivos subidos con éxito.");
-
-        // Agregar el nuevo registro a la tabla de registros
-        setRegistros([...registros, result.data]);
-
-        console.log(result);
-      } else {
-        const errorData = await response.json();
-        setMessage(`Error: ${errorData.error}`);
-      }
+  
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Error desconocido");
+  
+      setMessage("Archivo subido correctamente");
+  
+      // 🔹 En lugar de añadir manualmente los datos, recargar desde SQL
+      await fetchRegistros(); 
+  
     } catch (error) {
-      console.error("Error de red:", error);
-      setMessage("Hubo un problema al conectar con el servidor.");
+      console.error("Error subiendo archivo:", error);
+      setMessage(error.message || "Error en la subida");
     }
   };
+  
 
   return (
     <div className="form-page">
@@ -164,17 +167,28 @@ const RemProtegido = () => {
               </tr>
             </thead>
             <tbody>
-              {registros.map((registro, index) => (
-                <tr key={index}>
-                  <td>{registro.usuario}</td>
-                  <td>{registro.establecimiento}</td>
-                  <td>{registro.serie}</td>
-                  <td>{registro.anio}</td>
-                  <td>{registro.mes}</td>
-                  <td>{new Date(registro.fecha_recepcion).toLocaleString()}</td>
-                </tr>
-              ))}
-            </tbody>
+  {registros.map((registro, index) => {
+    console.log("🔹 Registro en la tabla:", registro);
+    
+    // Convertir la fecha UTC a la zona horaria local
+    const fechaLocal = registro.fecha_recepcion 
+      ? new Date(registro.fecha_recepcion).toLocaleString("es-CL", { timeZone: "America/Santiago" }) 
+      : "No Disponible";
+
+    return (
+      <tr key={index}>
+        <td>{registro.usuario || "No Disponible"}</td>
+        <td>{registro.establecimiento || "No Disponible"}</td>
+        <td>{registro.serie || "No Disponible"}</td>
+        <td>{registro.anio || "No Disponible"}</td>
+        <td>{registro.mes || "No Disponible"}</td>
+        <td>{fechaLocal}</td>
+      </tr>
+    );
+  })}
+</tbody>
+
+
           </table>
         </div>
       </div>
