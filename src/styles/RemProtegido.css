@@ -203,6 +203,25 @@ select:focus {
   font-size: 1rem;
 }
 
+.loading-icon {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.registros-subidos{
+  margin-right: 7%;
+}
 
 /* Media query para vista celular */
 @media (max-width: 768px) {
