@@ -3,6 +3,12 @@ import Footer from "../components/Footer"; // Importar el Footer
 import { useUser } from "../context/UserContext"; // Importar el contexto de usuario
 import "../styles/RemProtegido.css"; // Importar los estilos específicos para este componente
 
+console.log("🔹 Modo actual:", import.meta.env.MODE);
+if (import.meta.env.MODE !== "development") {
+  console.log = () => {};
+}
+
+
 const RemProtegido = () => {
   const { email } = useUser(); // Recuperar el correo electrónico del usuario autenticado
   const [files, setFiles] = useState([]); // Estado para almacenar los archivos
@@ -166,10 +172,14 @@ const RemProtegido = () => {
                 <th>Fecha de Recepción</th>
               </tr>
             </thead>
+
             <tbody>
   {registros.map((registro, index) => {
-    console.log("🔹 Registro en la tabla:", registro);
-    
+    // 🔹 Solo imprimir en consola si estamos en modo desarrollo
+    if (process.env.NODE_ENV === "development") {
+      console.log("🔹 Registro en la tabla:", registro);
+    }
+
     // Convertir la fecha UTC a la zona horaria local
     const fechaLocal = registro.fecha_recepcion 
       ? new Date(registro.fecha_recepcion).toLocaleString("es-CL", { timeZone: "America/Santiago" }) 
