@@ -201,6 +201,7 @@ const Administrador = () => {
             onChange={handleNuevoUsuarioChange}
           >
             <option value="usuario">Usuario</option>
+            <option value="lector">Lector</option>
             <option value="administrador">Administrador</option>
           </select>
           <button onClick={agregarUsuario} type="button">
