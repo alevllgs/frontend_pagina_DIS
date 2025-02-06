@@ -6,10 +6,14 @@ import Home from "./pages/Home";
 import Documentos from "./pages/Documentos";
 import Ges from "./pages/Ges"; // Página GES
 import Rem from "./pages/Rem"; // Página REM
+import ActividadesAps from "./pages/ActividadesAps";
+import ProduccionHospitalaria from "./pages/ProduccionHospitalaria";
+import Urgencia from "./pages/Urgencia";
 import ListaEspera from "./pages/ListaEspera"; // Página REM
 import Comges from "./pages/Comges";
 import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
 import Inmunizacion from "./pages/Inmunizacion"; // Página GES
+import EstadisticasVitales from "./pages/EstadisticasVitales"; // Página GES
 import VisorTerritorial from "./pages/VisorTerritorial"; // Página GES
 import ControlGestion from "./pages/ControlGestion"; // Página GESTION
 import LinksInteres from "./pages/LinksInteres";
@@ -26,7 +30,7 @@ import Administrador from "./pages/Administrador"; // Página protegida para adm
 
 // Importar las rutas centralizadas
 import { routes } from "./config/routes";
-import ActividadesAps from "./pages/ActividadesAps";
+
 
 const App = () => {
   return (
@@ -48,11 +52,14 @@ const App = () => {
         <Route path={routes.rem} element={<Rem />} />
         <Route path={routes.listaEspera} element={<ListaEspera />} />
         <Route path={routes.actividadesAps} element={<ActividadesAps />} />
+        <Route path={routes.produccionHospitalaria} element={<ProduccionHospitalaria />} />
+        <Route path={routes.urgencia} element={<Urgencia />} />
         <Route path={routes.comges} element={<Comges />} />
         <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />} />
         <Route path={routes.controlGestion} element={<ControlGestion />} />
         <Route path={routes.visorTerritorial} element={<VisorTerritorial />} />
         <Route path={routes.inmunizacion} element={<Inmunizacion />} />
+        <Route path={routes.estadisticasVitales} element={<EstadisticasVitales />} />
         
         {/* Rutas para Registro con redirección específica */}
         <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
