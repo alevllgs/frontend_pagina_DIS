@@ -51,6 +51,14 @@ const ActividadesAps = () => {
             iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
+             <Button
+            href="https://app.powerbi.com/view?r=eyJrIjoiYzBhZjY2OGMtNDE4Yi00NGMzLWExMWUtYjc2MmE4MTIzMjkwIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            icon="fa-prescription-bottle-medical"
+            title="Farmacia"
+            delay="300"
+            iconColor="#ff6b6b"
+            isMaterialSymbol={false} // Si es Google Icons
+          />
 
  
         </div>

@@ -12,21 +12,21 @@ const Ges = () => {
         <h1>Informes BI</h1>
         <div className="buttons">
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYWM0OGMxNWItYmMyMC00ZDM5LWEwZWMtNzEwOTBhODQwMjQ2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiNjNhYTM4NTUtMWRkYy00Zjk1LWI1ODctOWNkYTExMWMxYTU2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-hourglass-end"
             title="Garantías Retrasadas GES (bimensual)"
             delay="100"
             iconColor="#ff6b6b"
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiYTE5Y2RjNmYtZmFlMy00NDc1LThhYzUtNWM3Zjc1ODE2OTY2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiY2Y4Njk4ZDgtY2E5My00NGM0LWFiODEtMzBkZWIzNTZhY2QyIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-clock"
             title="Cumplimiento de Garantías GES (mensual)"
             delay="200"
             iconColor="#ff6b6b"
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiNjIzNGI0ODAtY2FhOC00YWVkLThhMTgtMmFkZTFhMDRiYmI3IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiMjFiODE0YzUtOThmNC00MmNiLWJmNTQtMGNmZGYxNDQyM2JkIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-stopwatch"
             title="Garantías Exceptuadas Transitorias"
             delay="300"

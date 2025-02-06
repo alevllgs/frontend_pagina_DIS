@@ -25,13 +25,7 @@ const Rem = () => {
             delay="200"
             iconColor="#ff6b6b"
           />
-          <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiNjIzNGI0ODAtY2FhOC00YWVkLThhMTgtMmFkZTFhMDRiYmI3IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-chart-line"
-            title="Estadísticas"
-            delay="300"
-            iconColor="#ff6b6b"
-          />
+         
         </div>
 
         <h1>Envios y correcciones REM</h1>

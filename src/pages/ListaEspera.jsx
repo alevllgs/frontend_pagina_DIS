@@ -12,14 +12,14 @@ const ListaEspera = () => {
         <h1>Lista de Espera</h1>
         <div className="buttons_int">
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiN2Y2MTk0ODMtMDhlZC00M2MyLTg3NDUtNzY3ZTUzOTc4YjYwIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiODFhNmQyZGYtNzEwMC00ZWFkLTliOTItMTk5ZGI4MDJkYzNhIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-list-ol"
             title="LE No GES"
             delay="100"
             iconColor="#ff6b6b"
           />
           <Button
-            href="https://app.powerbi.com/view?r=eyJrIjoiZDhjMTExODEtNjc0NS00Y2M3LTgxMDYtZmM0YjAwOTIxYThlIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
+            href="https://app.powerbi.com/view?r=eyJrIjoiZDEyMmE2YjktYWRhOS00YjdmLThlZTEtNDJiOWVkYzhlNDAwIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-chart-line"
             title="Evolución LE No GES"
             delay="200"
