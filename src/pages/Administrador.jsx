@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Administrador.css";
 
-const API_URL = "http://localhost:5000"; // URL base del backend
+const API_URL = import.meta.env.VITE_API_URL; // URL base del backend
 
 const Administrador = () => {
   const [usuarios, setUsuarios] = useState([]);
