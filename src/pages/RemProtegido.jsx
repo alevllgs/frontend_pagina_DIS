@@ -5,9 +5,9 @@ import "../styles/RemProtegido.css"; // Importar los estilos específicos para e
 
 console.log("🔹 Modo actual:", import.meta.env.MODE);
 if (import.meta.env.MODE !== "development") {
-  console.log = () => {};
+  console.log = () => { };
 }
-
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000";
 
 const RemProtegido = () => {
   const { email } = useUser();
@@ -26,11 +26,16 @@ const RemProtegido = () => {
       if (!email) return;
 
       const response = await fetch(
-        `http://127.0.0.1:5000/upload/registros?email=${encodeURIComponent(
-          email
-        )}`
-      );
-      if (!response.ok) throw new Error("Error en la respuesta del servidor");
+        `${API_URL}/upload/registros?email=${encodeURIComponent(email)}`, 
+        {
+            method: "GET", // Asegúrate de que el método sea el correcto
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }
+    );
+
+if (!response.ok) throw new Error("Error en la respuesta del servidor");
 
       const data = await response.json();
       console.log("🔹 Datos recibidos en React:", data);
@@ -74,7 +79,9 @@ const RemProtegido = () => {
     formData.append("mes", mes);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/upload/", {
+      
+
+      const response = await fetch(`${API_URL}/upload/`, {
         method: "POST",
         body: formData,
       });
@@ -152,22 +159,22 @@ const RemProtegido = () => {
             </div>
 
             <div className="subida">
-  <input
-    type="file"
-    multiple
-    accept=".xlsx,.xlsm"
-    onChange={handleFileChange}
-  />
-  <button type="submit" disabled={isLoading}>
-    {isLoading ? (
-      <>
-        <span className="loading-icon"></span> Cargando...
-      </>
-    ) : (
-      "Subir Archivos"
-    )}
-  </button>
-</div>
+              <input
+                type="file"
+                multiple
+                accept=".xlsx,.xlsm"
+                onChange={handleFileChange}
+              />
+              <button type="submit" disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    <span className="loading-icon"></span> Cargando...
+                  </>
+                ) : (
+                  "Subir Archivos"
+                )}
+              </button>
+            </div>
 
 
 
@@ -199,8 +206,8 @@ const RemProtegido = () => {
                 // Convertir la fecha UTC a la zona horaria local
                 const fechaLocal = registro.fecha_recepcion
                   ? new Date(registro.fecha_recepcion).toLocaleString("es-CL", {
-                      timeZone: "America/Santiago",
-                    })
+                    timeZone: "America/Santiago",
+                  })
                   : "No Disponible";
 
                 return (
