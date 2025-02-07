@@ -33,7 +33,7 @@ const Rem = () => {
           <Button
             href="/rem_login"
             icon="fa-file-import"
-            title="Recepción REM"
+            title="Envio de REM"
             delay="300"
             iconColor="#ff6b6b"
           />
