@@ -4,250 +4,90 @@ import "../styles/Administrador.css";
 const API_URL = import.meta.env.VITE_API_URL; // URL base del backend
 
 const AdministradorRem = () => {
-  const [usuarios, setUsuarios] = useState([]);
-  const [nuevoUsuario, setNuevoUsuario] = useState({
-    establecimiento: "",
-    nombre: "",
-    email: "",
-    clave: "",
-    rol: "usuario", // Rol predeterminado
-  });
+  const [informes, setInformes] = useState([]);
+  const [anio, setAnio] = useState(new Date().getFullYear());
+  const [mes, setMes] = useState("01");
 
-  const [adminParams, setAdminParams] = useState({
-    serie: "",
-    version: "",
-  });
-
-  const [parametros, setParametros] = useState([]); // Para almacenar los parámetros obtenidos
-
-  // Cargar usuarios y parámetros al montar el componente
   useEffect(() => {
-    cargarUsuarios();
-    cargarParametros();
-  }, []);
+    cargarInformes();
+  }, [anio, mes]);
 
-  // Obtener lista de usuarios
-  const cargarUsuarios = async () => {
+  // Obtener lista de informes desde el backend
+  const cargarInformes = async () => {
     try {
-      const response = await fetch(`${API_URL}/auth/usuarios`);
-      if (!response.ok) throw new Error("Error al cargar usuarios");
+      const response = await fetch(`${API_URL}/admin/informes-rem?anio=${anio}&mes=${mes}`);
+      if (!response.ok) throw new Error("Error al cargar informes");
       const data = await response.json();
-      setUsuarios(data);
+      setInformes(data);
     } catch (error) {
-      console.error(error);
-      alert("Error al cargar usuarios");
-    }
-  };
-
-  // Obtener lista de parámetros
-  const cargarParametros = async () => {
-    try {
-      const response = await fetch(`${API_URL}/auth/params`);
-      if (!response.ok) throw new Error("Error al cargar parámetros");
-      const data = await response.json();
-      setParametros(data);
-    } catch (error) {
-      console.error("Error al cargar parámetros:", error);
-    }
-  };
-
-  // Manejar cambios en el formulario de nuevo usuario
-  const handleNuevoUsuarioChange = (e) => {
-    setNuevoUsuario({ ...nuevoUsuario, [e.target.name]: e.target.value });
-  };
-
-  // Manejar cambios en el formulario de parámetros
-  const handleAdminParamsChange = (e) => {
-    setAdminParams({ ...adminParams, [e.target.name]: e.target.value });
-  };
-
-  // Agregar un nuevo usuario
-  const agregarUsuario = async () => {
-    try {
-      const response = await fetch(`${API_URL}/auth/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(nuevoUsuario),
-      });
-      if (!response.ok) {
-        const error = await response.json();
-        alert(error.error);
-        return;
-      }
-
-      const data = await response.json();
-      alert(data.message);
-      cargarUsuarios();
-    } catch (error) {
-      console.error(error);
-      alert("Error al agregar usuario");
-    }
-  };
-
-  // Eliminar un usuario
-  const eliminarUsuario = async (id) => {
-    if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return;
-    try {
-      const response = await fetch(`${API_URL}/auth/usuarios/${id}`, {
-        method: "DELETE",
-      });
-      if (!response.ok) throw new Error("Error al eliminar el usuario");
-      alert("Usuario eliminado con éxito");
-      cargarUsuarios(); // Recargar la lista de usuarios
-    } catch (error) {
-      console.error("Error al eliminar usuario:", error);
-      alert("Error al eliminar el usuario");
-    }
-  };
-
-  // Modificar la versión de un parámetro existente
-  const modificarParametro = async () => {
-    console.log("Enviando datos:", adminParams);
-    try {
-      const response = await fetch(`${API_URL}/auth/admin/params`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adminParams),
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        console.error("Error en la respuesta:", error);
-        throw new Error("Error al modificar el parámetro");
-      }
-
-      const data = await response.json();
-      alert("Parámetro actualizado con éxito: " + data.message);
-
-      // Actualizar lista de parámetros en el estado con los datos recibidos
-      if (data.parametros) {
-        setParametros(data.parametros); // Actualizar la lista en el frontend
-      }
-    } catch (error) {
-      console.error("Error al modificar parámetro desde React:", error);
-      alert("Error al modificar el parámetro");
+      console.error("Error al cargar informes:", error);
+      alert("Error al cargar informes");
     }
   };
 
   return (
     <div className="container">
-      <h1>Panel de Administración</h1>
+      <h1>Panel de Administración - Informes REM</h1>
 
-      {/* Modificar Parámetros de administrador_rem */}
+      {/* Formulario para seleccionar año y mes */}
       <section>
-        <h2>Modificar Parámetros del Administrador</h2>
+        <h2>Seleccionar Año y Mes</h2>
         <div className="form-grid">
-          <select
-            name="serie"
-            value={adminParams.serie}
-            onChange={handleAdminParamsChange}
-          >
-            <option value="">Seleccione una serie</option>
-            <option value="SERIE A">SERIE A</option>
-            <option value="SERIE BS">SERIE BS</option>
-            <option value="SERIE BM">SERIE BM</option>
-            <option value="SERIE D">SERIE D</option>
-            <option value="SERIE P">SERIE P</option>
+          <select value={anio} onChange={(e) => setAnio(e.target.value)}>
+            {Array.from({ length: 5 }, (_, i) => {
+              const year = new Date().getFullYear() - i;
+              return <option key={year} value={year}>{year}</option>;
+            })}
           </select>
-          <input
-            name="version"
-            placeholder="Nueva Versión"
-            value={adminParams.version}
-            onChange={handleAdminParamsChange}
-          />
-          <button onClick={modificarParametro}>Modificar Parámetro</button>
+
+          <select value={mes} onChange={(e) => setMes(e.target.value)}>
+            {Array.from({ length: 12 }, (_, i) => {
+              const month = (i + 1).toString().padStart(2, "0");
+              return <option key={month} value={month}>{month}</option>;
+            })}
+          </select>
+
+          <button onClick={cargarInformes}>Cargar Informes</button>
         </div>
-
-        <h3>Lista de Parámetros</h3>
-        <ul>
-          {parametros.map((param, index) => (
-            <li key={index}>
-              {param.serie} - {param.version}
-            </li>
-          ))}
-        </ul>
       </section>
 
-      {/* Agregar Usuario */}
+      {/* Tabla de Informes */}
       <section>
-        <h2>Agregar Usuario</h2>
-        <form>
-          <input
-            name="establecimiento"
-            placeholder="Establecimiento"
-            onChange={handleNuevoUsuarioChange}
-          />
-          <input
-            name="nombre"
-            placeholder="Nombre"
-            onChange={handleNuevoUsuarioChange}
-          />
-          <input
-            name="email"
-            placeholder="Email"
-            onChange={handleNuevoUsuarioChange}
-          />
-          <input
-            name="clave"
-            placeholder="Clave"
-            type="password"
-            onChange={handleNuevoUsuarioChange}
-          />
-          <select
-            name="rol"
-            value={nuevoUsuario.rol}
-            onChange={handleNuevoUsuarioChange}
-          >
-            <option value="usuario">Usuario</option>
-            <option value="lector">Revisa informes REM</option>
-            <option value="dashboard">Modifica Dashboard</option>
-            <option value="administrador">Administrador</option>
-          </select>
-          <button onClick={agregarUsuario} type="button">
-            Agregar Usuario
-          </button>
-        </form>
-      </section>
-
-      {/* Listado de Usuarios */}
-      <section>
-        <h2>Lista de Usuarios</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Establecimiento</th>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Fecha Creación</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {usuarios.map((usuario) => (
-              <tr key={usuario.id}>
-                <td>{usuario.id}</td>
-                <td>{usuario.establecimiento}</td>
-                <td>{usuario.nombre}</td>
-                <td>{usuario.email}</td>
-                <td>{new Date(usuario.fecha_creacion).toLocaleString()}</td>
-                <td>
-                  <button
-                    onClick={() => eliminarUsuario(usuario.id)}
-                    className="btn-eliminar"
-                  >
-                    Eliminar
-                  </button>
-                </td>
+        <h2>Lista de Informes</h2>
+        {informes.length > 0 ? (
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Establecimiento</th>
+                <th>Serie</th>
+                <th>Año</th>
+                <th>Mes</th>
+                <th>Fecha Recepción</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {informes.map((registro) => (
+                <tr key={registro.id}>
+                  <td>{registro.id}</td>
+                  <td>{registro.usuario}</td>
+                  <td>{registro.establecimiento}</td>
+                  <td>{registro.serie}</td>
+                  <td>{registro.anio}</td>
+                  <td>{registro.mes}</td>
+                  <td>{new Date(registro.fecha_recepcion).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No hay informes disponibles para el año y mes seleccionados.</p>
+        )}
       </section>
     </div>
   );
 };
 
 export default AdministradorRem;
+

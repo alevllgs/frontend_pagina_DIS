@@ -24,7 +24,7 @@ const Administrador = () => {
 
           <Button
             to="admin_inf_rem"
-            icon="manage_accounts"
+            icon="file_save"
             title="Informes REM"
             delay="300"
             iconColor="#ff6b6b"
