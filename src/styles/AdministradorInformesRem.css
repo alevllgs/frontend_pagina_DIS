@@ -1,0 +1,106 @@
+/* General container */
+.container-informes {
+    width: 95%;  /* Usa casi todo el ancho de la pantalla */
+    max-width: none; /* Elimina la restricción de tamaño */
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;  /* Asegura que no sea demasiado pequeño */
+}
+  
+  /* Header styles */
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #222;
+    font-size: 1.4rem;
+  }
+  
+  /* Report grid layout */
+  .reportes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+ 
+  }
+  
+  /* Individual report section */
+  .reporte-container {
+ 
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Report action buttons */
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #e01010;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #d00d0d;
+  }
+  
+  .export-btn {
+    background-color: #007bff;
+  }
+  
+  .export-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  thead {
+    background-color: #494949;
+    color: white;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Error message */
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
