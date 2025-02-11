@@ -72,27 +72,41 @@
   font-weight: 600; /* Hacer la letra más gruesa */
 }
 
-/* Vista celular (responsive) */
 @media (max-width: 768px) {
   .buttons_int {
-    grid-template-columns: repeat(2, 1fr); /* Mostrar 2 botones por fila en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
     margin-left: 5%;
     margin-right: 5%;
-    gap: 20px; /* Espaciado entre botones */
+    gap: 20px;
     padding: 10px;
   }
 
   .buttons_int .button {
-    width: 80%; /* Hacer que los botones ocupen todo el ancho disponible */
+    width: 85%;
     max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Reducir tamaño de letra en móviles */
+  /* Asegurar que el contenedor del ícono permita crecimiento */
+  .buttons_int .button i,
+  .buttons_int .button .material-symbols-outlined {
+    font-size: 50px !important; /* Ajustar el tamaño del icono */
+    width: auto;
+    height: auto;
+    display: block;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  /* Reducir tamaño de la letra para optimizar espacio */
   .buttons_int .title {
-    font-size: 11px !important; /* Reducir tamaño en móviles */
-    white-space: normal; /* Permitir que el texto se ajuste automáticamente */
-    word-wrap: break-word; /* Evitar que el texto se salga del botón */
-    text-align: center; /* Asegurar alineación */
+    font-size: 13px !important; /* Ajustar el tamaño del texto */
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
   }
 }
-
