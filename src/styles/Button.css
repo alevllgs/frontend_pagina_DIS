@@ -10,6 +10,7 @@
   justify-items: center; /* Centrar los botones dentro de cada celda */
   margin-left: 15%;
   margin-right: 15%;
+
 }
 
 /* Definir un valor para el gradiente, puedes cambiar entre --gradient-1, --gradient-2, etc. */
@@ -41,12 +42,13 @@
   border-radius: 15px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   width: 150px;
-  height: 180px;
+  height: 150px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   color: #ffffff;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
+
 }
 
 /* Estilo para el hover de los botones dentro de .buttons */
@@ -80,17 +82,35 @@
   font-weight: 600; /* Hacer la letra más gruesa */
 }
 
-/* Vista celular (responsive) */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .banner {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .notification {
+    display: none !important;
+  }
+
+  /* Contenedor de los botones */
   .buttons {
-    grid-template-columns: repeat(2, 1fr); /* Mostrar 2 botones por fila en pantallas pequeñas */
-    margin-left: 5%;
-    margin-right: 5%;
+    display: grid !important; /* Asegurar que la cuadrícula se aplique */
+    grid-template-columns: repeat(2, 1fr) !important; /* EXACTAMENTE 2 botones por fila */
+    width: 90%; /* Ajustar ancho para centrar en la pantalla */
+    margin: 0 auto; /* Centrar */
     gap: 20px; /* Espaciado entre botones */
     padding: 10px;
+    justify-content: center; /* Asegurar que los botones estén alineados */
   }
 
   .buttons .button {
-    width: 85%; /* Hacer que los botones ocupen todo el ancho disponible */
+    width: 100% !important; /* Forzar que ocupen su celda en la cuadrícula */
+    max-width: 140px; /* Limitar tamaño máximo */
+    height: 150px; /* Tamaño consistente */
+    text-align: center;
   }
 }
+
+

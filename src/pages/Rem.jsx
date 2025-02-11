@@ -10,7 +10,7 @@ const Rem = () => {
       {/* Columna izquierda: Botones y secciones GES */}
       <div className="ges-page">
         <h1>REM Oficiales</h1>
-        <div className="buttons">
+        <div className="buttons_int">
           <Button
             href="https://dis.saludoriente.cl/degidssmo/intranet/index.php"
             icon="fa-list"
@@ -29,7 +29,7 @@ const Rem = () => {
         </div>
 
         <h1>Envios y correcciones REM</h1>
-        <div className="buttons">
+        <div className="buttons_int">
           <Button
             href="/rem_login"
             icon="fa-file-import"

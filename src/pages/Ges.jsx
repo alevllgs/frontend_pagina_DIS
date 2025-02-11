@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import Footer from "../components/Footer"; // Importar el Footer
-import "../styles/Button.css"; // Reutilizamos los estilos existentes
+import "../styles/BotonesInteriores.css"; // Reutilizamos los estilos existentes
 import "../styles/Ges.css"; // Reutilizamos los estilos existentes
 
 const Ges = () => {
@@ -10,7 +10,7 @@ const Ges = () => {
       {/* Columna izquierda: Botones y secciones GES */}
       <div className="ges-page">
         <h1>Informes BI</h1>
-        <div className="buttons">
+        <div className="buttons_int">
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiNjNhYTM4NTUtMWRkYy00Zjk1LWI1ODctOWNkYTExMWMxYTU2IiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-hourglass-end"
@@ -35,7 +35,7 @@ const Ges = () => {
         </div>
 
         <h1>Mapa derivación GES (flujo)</h1>
-        <div className="buttons">
+        <div className="buttons_int">
           <Button
             href="/pagina_sigges/protocolos_ges.html"
             icon="fa-person-walking-arrow-right"

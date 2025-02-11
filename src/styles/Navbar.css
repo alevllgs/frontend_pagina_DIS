@@ -180,50 +180,74 @@ body.dark-mode .navbar {
 }
 
 
-
-/* Vista móvil */
 @media (max-width: 900px) {
     .navbar {
         background: #04759b;
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
         align-items: center;
+        padding: 15px;
     }
 
     .navbar-container {
-        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Asegurar que los elementos estén en columna */
         align-items: center;
-        width: 90%;
     }
 
+    /* Logo arriba y título abajo con separación */
     .navbar-logo {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; /* Asegurar que los elementos se apilen */
+        justify-content: center;
         align-items: center;
-        text-align: center;
-        margin-bottom: 10px;
+        gap: 10px;
+        margin: 0;
     }
 
     .navbar-logo-image {
-        height: 70px;
+        height: 50px;
+        width: auto;
         margin-bottom: 10px;
     }
 
+    .navbar-logo-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Mostrar solo "Inicio" debajo del título */
     .navbar-links {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px; /* Espaciado respecto al título */
     }
 
     .navbar-links a {
-        width: 100%;
-        text-align: center;
+        display: none; /* Ocultar todos los enlaces */
     }
 
-    .navbar-search {
-        width: 100%;
-        margin-top: 10px;
+    .navbar-links a[href="/"] {
+        display: inline-block; /* Mostrar solo "Inicio" */
+        padding: 10px 15px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-top: 10px; /* Separación con el título */
     }
 
-    .search-input {
-        width: calc(100% - 50px);
+    .navbar-links a[href="/"]:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Ocultar acciones y buscador */
+    .navbar-actions {
+        display: none;
     }
 }

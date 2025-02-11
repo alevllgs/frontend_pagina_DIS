@@ -84,5 +84,15 @@
 
   .buttons_int .button {
     width: 80%; /* Hacer que los botones ocupen todo el ancho disponible */
+    max-height: 150px;
+  }
+
+  /* Reducir tamaño de letra en móviles */
+  .buttons_int .title {
+    font-size: 11px !important; /* Reducir tamaño en móviles */
+    white-space: normal; /* Permitir que el texto se ajuste automáticamente */
+    word-wrap: break-word; /* Evitar que el texto se salga del botón */
+    text-align: center; /* Asegurar alineación */
   }
 }
+

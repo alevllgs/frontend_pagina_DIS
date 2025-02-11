@@ -35,8 +35,14 @@
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Vista celular (responsive) */
+/* Ocultar el banner en dispositivos móviles */
 @media (max-width: 768px) {
+  .banner-container {
+    display: none !important;
+  }
+}
+
+
   .buttons {
     grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
     margin-left: 5%;
@@ -48,4 +54,5 @@
   .button {
     width: 85%; /* Ancho máximo disponible */
   }
-}
+
+
