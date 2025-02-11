@@ -44,8 +44,13 @@
     gap: 20px;
     padding: 10px;
   }
-
+  .banner-container {
+    display: none !important;
+  }
+  
   .button {
     width: 85%; /* Ancho máximo disponible */
   }
 }
+
+
