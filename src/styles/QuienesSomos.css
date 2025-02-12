@@ -63,7 +63,15 @@
   gap: 20px;
   justify-content: center;
   margin-top: 30px;
+  max-width: 1500px !important; /* Asegura que el tamaño se aplique */
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  box-sizing: border-box; /* Evita que padding afecte el ancho */
+  width: 100%; /* Asegura que se comporte correctamente */
 }
+
 
 /* Tarjeta */
 .card-item {
@@ -71,22 +79,35 @@
   max-width: calc(25% - 40px);
   margin: 10px;
   box-sizing: border-box;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   color: var(--text-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Efecto al pasar el mouse */
 .card-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.55); /* Eleva la tarjeta y la agranda un poco */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
 }
+
+/* Efecto en la imagen dentro de la card */
+.card-item:hover .card-image {
+  filter: brightness(1.1); /* Aumenta el brillo */
+  transition: filter 0.3s ease-in-out;
+}
+
 
 /* Imagen de la tarjeta */
 .card-image {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
+    width: 100% !important;
+    height: 350px !important; /* Ajusta el tamaño a tu preferencia */
+    object-fit: cover !important;
+    border-radius: 10px !important;
+  }
+  
 /* Footer Fijo en la última fila */
 footer {
   background-color: var(--card-background);
@@ -100,6 +121,7 @@ footer {
 }
 
 /* Responsivo */
+
 @media (max-width: 768px) {
   .card-item {
     flex: 1 1 100%;
@@ -115,9 +137,4 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
-  .cards-container {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
+
