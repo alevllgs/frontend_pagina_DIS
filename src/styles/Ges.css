@@ -45,17 +45,11 @@ footer {
 
 /* Sección derecha (document-container) */
 .document-container {
-  display: grid;
-  grid-template-rows: auto 1fr; /* Primera fila para el título, segunda para las tarjetas */
-  grid-template-columns: 1fr; /* El título ocupa toda la línea */
-  gap: 20px; /* Espaciado entre el título y las tarjetas */
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  overflow-y: auto; /* Scroll en caso de exceso de contenido */
-  margin-right: 20px;
-  margin-top: 20px;
-  background-color: var(--card-background); /* Cambiar según el modo */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px; /* Reducir padding */
+  max-height: 100%; /* Evitar que crezca más de lo necesario */
 }
 
 /* Título dentro de document-container */
@@ -71,66 +65,51 @@ footer {
 /* Contenedor para las tarjetas de documentos */
 .document-card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
-  gap: 20px; /* Espaciado entre las tarjetas */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  grid-auto-rows: max-content; /* Añadido para altura automática compacta */
 }
 
 /* Tarjetas de documentos */
 .document-card {
   text-align: center;
-  border: 2px solid var(--text-color); /* Cambiar borde según el modo */
+  border: 2px solid var(--text-color);
   border-radius: 10px;
-  padding: 15px;
-  background-color: var(--card-background); /* Cambiar fondo según el modo */
+  padding: 10px; /* Reducido el padding */
+  background-color: var(--card-background);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--text-color); /* Cambiar texto según el modo */
-  max-height: 150px;
-}
-
-.document-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+  color: var(--text-color);
+  max-height: 100px;
+  min-height: unset; /* Asegurar que no tenga altura mínima */
+  display: flex; /* Añadido para mejor control */
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio internamente */
 }
 
 /* Enlaces dentro de las tarjetas */
 .document-card a {
   text-decoration: none;
-  color: var(--text-color); /* Cambiar texto según el modo */
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centra el contenido verticalmente */
+  height: 100%; /* Ocupa toda la altura disponible */
 }
 
 /* Ícono PDF */
 .document-card i {
-  font-size: 4rem; /* Ícono grande */
-  color: #e74c3c; /* Usar una variable dinámica */
-  margin-bottom: 10px;
-  margin-top: 20px;
+  font-size: 2rem !important; /* Reducido el tamaño */
+  color: #e74c3c;
+  margin: 3px 0; /* Margen reducido */
 }
-
-
 
 /* Texto debajo del ícono */
 .document-card p {
-  font-size: 1rem;
+  font-size: 0.75rem !important; /* Tamaño reducido */
   font-weight: bold;
-  margin: 0;
-  color: var(--text-color); /* Cambiar texto según el modo */
-}
-
-/* Footer */
-footer {
-  background-color: var(--card-background); /* Cambiar según el modo */
-  text-align: center;
-  padding: 10px 0; /* Solo espacio interno vertical */
-  margin: 0; /* Sin márgenes */
-  font-size: 14px;
-  color: var(--text-color); /* Cambiar texto según el modo */
-  width: 100%; /* Ocupa todo el ancho */
-  position: relative; /* Mantener en flujo normal */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para separarlo visualmente */
-  grid-column: 1 / -1; /* Atraviesa ambas columnas en la grid */
+  margin: 2px 0; /* Margen reducido */
+  line-height: 1.2; /* Altura de línea ajustada */
 }
 
 /* Media query para vista celular */
