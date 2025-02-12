@@ -1,44 +1,32 @@
 .banner-container {
-    position: relative;
-    width: 100%;
-    height: 250px; /* Ajusta la altura según tus necesidades */
-    overflow: hidden;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transition: all 0.3s ease-out;
+}
 
-  .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(0%);
-    transition: filter 0.5s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    
-    
-  }
-  
-  .banner-image:hover {
-    filter: grayscale(100%);
-  }
-  
-  
-  .banner-text {
-    position: absolute;
-    top: 50%; /* Alinea verticalmente al centro */
-    left: 20px; /* Alinea a la izquierda con un margen de 20px */
-    transform: translateY(-50%); /* Centra verticalmente */
-    text-align: left; /* Alinea el texto a la izquierda */
-   
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    max-width: 30%;
-  }
+.banner-container.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+}
 
-  .banner-text p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 30%;
+}

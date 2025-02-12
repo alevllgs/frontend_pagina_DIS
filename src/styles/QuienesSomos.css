@@ -72,7 +72,6 @@
   width: 100%; /* Asegura que se comporte correctamente */
 }
 
-
 /* Tarjeta */
 .card-item {
   flex: 0 1 calc(25% - 40px);
@@ -86,6 +85,7 @@
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Efecto al pasar el mouse */
 .card-item:hover {
@@ -102,23 +102,25 @@
 
 /* Imagen de la tarjeta */
 .card-image {
-    width: 100% !important;
-    height: 350px !important; /* Ajusta el tamaño a tu preferencia */
-    object-fit: cover !important;
-    border-radius: 10px !important;
-  }
-  
-/* Footer Fijo en la última fila */
-footer {
-  background-color: var(--card-background);
-  text-align: center;
-  padding: 15px 0;
-  font-size: 14px;
-  color: var(--text-color);
   width: 100%;
-  grid-row: 3; /* Lo coloca en la última fila de la grid */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0; /* Redondea solo la parte superior */
 }
+  
+/* Contenedor del texto dentro de la tarjeta */
+.card-body {
+  padding: 15px; /* Agrega margen interno solo al texto */
+  text-align: center; /* Centra el texto */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
 
 /* Responsivo */
 

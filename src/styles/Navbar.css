@@ -3,7 +3,8 @@
     position: sticky; /* Fija el navbar en la parte superior al desplazarse */
     top: 0;
     width: 100%;
-    padding: 15px 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     background: #0a7cc9; /* Fondo celeste por defecto */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #fff;
