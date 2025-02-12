@@ -82,14 +82,13 @@
   color: var(--text-color);
   border-radius: 10px;
   overflow: hidden;
-  background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
 /* Efecto al pasar el mouse */
 .card-item:hover {
-  transform: translateY(-8px) scale(1.55); /* Eleva la tarjeta y la agranda un poco */
+  transform: translateY(-8px) scale(1.05); /* Eleva la tarjeta y la agranda un poco */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
 }
 

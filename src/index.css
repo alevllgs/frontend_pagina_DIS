@@ -1,8 +1,12 @@
+/* Importar fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* Variables globales de tema */
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
   --card-background: #f8f9fa;
+  --font-family: 'Poppins', sans-serif;
 }
 
 /* Modo oscuro */
@@ -16,6 +20,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: var(--font-family); /* Aplicar la fuente moderna */
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -24,7 +29,6 @@ body {
   color: var(--text-color);
   border: 1px solid var(--text-color);
 }
-
 
 .active {
   color: darkgreen;

@@ -10,7 +10,7 @@ const palette = colorPalettes[paleta];
 const ButtonGroup = () => {
   return (
     <div className="buttons">
-      <Button href="rem/" icon="fa-chart-bar" title="Estadísticas REM" delay="0" iconColor={palette[0]} /> 
+      <Button href="rem/" icon="fa-chart-bar" title="REM" delay="0" iconColor={palette[0]} /> 
       <Button href="lista_espera/" icon="fa-list-alt" title="Lista de Espera" delay="300" iconColor={palette[3]} /> 
       <Button href="ges/" icon="fa-hospital-user" title="GES" delay="100" iconColor={palette[1]} /> 
       <Button href="https://app.powerbi.com/view?r=eyJrIjoiZDFiNGU5YjQtNDQwYi00ODhkLTgxOWYtNDcyOTA0MzZhMjgxIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9" icon="fa-bed-pulse" title="GRD" delay="200" iconColor={palette[2]} /> 
