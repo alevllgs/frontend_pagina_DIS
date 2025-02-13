@@ -111,9 +111,9 @@ footer {
     grid-template-columns: 1fr; /* Una sola columna */
     grid-template-rows: auto auto auto; /* Cada sección en su propia fila */
     height: auto; /* Ajustar la altura al contenido */
-    margin-left: 20px !important; /*
+    margin-left: 20px !important; 
   }
-
+  
   .ges-page {
     margin-left: 10px !important; /* Sin márgenes laterales */
     padding: 0px !important;

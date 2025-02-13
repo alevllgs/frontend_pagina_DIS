@@ -13,31 +13,35 @@ const ListaEspera = () => {
         <div className="buttons_int">
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiODFhNmQyZGYtNzEwMC00ZWFkLTliOTItMTk5ZGI4MDJkYzNhIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-list-ol"
+            icon="list"
             title="LE No GES"
             delay="100"
             iconColor="#ff6b6b"
+            isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiZDEyMmE2YjktYWRhOS00YjdmLThlZTEtNDJiOWVkYzhlNDAwIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
-            icon="fa-chart-line"
+            icon="monitoring"
             title="Evolución LE No GES"
             delay="200"
             iconColor="#ff6b6b"
+            isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiN2NkZDdiMGItOGEwYS00ZWVhLTgxNGEtOWNkMzg1Yzk3YThjIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9&pageName=ReportSectionf58c34c322b72ac4b99c"
-            icon="fa-ribbon"
+            icon="oncology"
             title="LE NO GES Oncológíca"
             delay="300"
             iconColor="#ff6b6b"
+            isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
             href=""
-            icon="fa-person-walking-arrow-right"
+            icon="move_item"
             title="Egresos Lista de Espera No GES [Proximamente]"
             delay="300"
             iconColor="#ff6b6b"
+            isMaterialSymbol={true} // Si es Google Icons
           />
 
 
