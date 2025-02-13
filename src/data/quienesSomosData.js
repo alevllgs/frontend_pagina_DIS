@@ -54,7 +54,7 @@ const quienesSomosData = [
         cargo: 'Unidad de Estadística y Gestión Administrativa de Pacientes',
         titulo: 'Ingeniero Comercial',
 
-        imgSrc: 'public/img/quienes_somos/gato3.jpg',
+        imgSrc: 'public/img/quienes_somos/PATRICIOA.jpg',
 
     },
     {

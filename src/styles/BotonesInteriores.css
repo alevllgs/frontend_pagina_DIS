@@ -5,7 +5,7 @@
 .buttons_int {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 botones por fila */
-  gap: 30px; /* Espaciado entre botones */
+  gap: 30px !important; /* Espaciado entre botones */
   padding: 20px;
   justify-items: center; /* Centrar los botones dentro de cada celda */
   margin-left: 15%;

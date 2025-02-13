@@ -35,13 +35,6 @@ footer {
   color: var(--text-color); /* Cambiar texto según el modo */
 }
 
-/* Botones en ges-page */
-.buttons {
-  display: flex;
-  flex-wrap: wrap; /* Permitir que los botones se ajusten en varias filas */
-  gap: 20px; /* Espaciado entre botones */
-  justify-content: flex-start; /* Alinear al inicio */
-}
 
 /* Sección derecha (document-container) */
 .document-container {
@@ -118,16 +111,17 @@ footer {
     grid-template-columns: 1fr; /* Una sola columna */
     grid-template-rows: auto auto auto; /* Cada sección en su propia fila */
     height: auto; /* Ajustar la altura al contenido */
+    margin-left: 20px !important; /*
   }
 
   .ges-page {
-    margin: 0; /* Sin márgenes laterales */
-    padding: 15px;
+    margin-left: 10px !important; /* Sin márgenes laterales */
+    padding: 0px !important;
   }
 
   .document-container {
     margin: 0; /* Sin márgenes laterales */
-    padding: 15px;
+    padding: 0px;
     grid-template-columns: 1fr; /* Una tarjeta por fila */
   }
 
