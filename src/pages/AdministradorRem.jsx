@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as XLSX from "xlsx"; // Importar la librería xlsx
 import "../styles/AdministradorInformesRem.css";
 
 const API_URL = import.meta.env.VITE_API_URL; // URL base del backend
@@ -18,15 +19,14 @@ const AdministradorRem = () => {
     version: "",
   });
 
-  const [parametros, setParametros] = useState([]); // Para almacenar los parámetros obtenidos
+  const [parametros, setParametros] = useState([]);
+  const [archivo, setArchivo] = useState(null);
 
-  // Cargar usuarios y parámetros al montar el componente
   useEffect(() => {
     cargarUsuarios();
     cargarParametros();
   }, []);
 
-  // Obtener lista de usuarios
   const cargarUsuarios = async () => {
     try {
       const response = await fetch(`${API_URL}/auth/usuarios`);
@@ -39,7 +39,6 @@ const AdministradorRem = () => {
     }
   };
 
-  // Obtener lista de parámetros
   const cargarParametros = async () => {
     try {
       const response = await fetch(`${API_URL}/auth/params`);
@@ -51,15 +50,94 @@ const AdministradorRem = () => {
     }
   };
 
-  // Manejar cambios en el formulario de nuevo usuario
   const handleNuevoUsuarioChange = (e) => {
     setNuevoUsuario({ ...nuevoUsuario, [e.target.name]: e.target.value });
   };
 
-  // Manejar cambios en el formulario de parámetros
   const handleAdminParamsChange = (e) => {
     setAdminParams({ ...adminParams, [e.target.name]: e.target.value });
   };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setArchivo(file);
+      leerVersionDesdeXLSM(file);
+    }
+  };
+
+  const leerVersionDesdeXLSM = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: "array" });
+
+        // Verificar que exista la hoja "NOMBRE"
+        const sheetName = workbook.SheetNames.find((name) => name === "NOMBRE");
+        if (!sheetName) {
+          alert("Error: El archivo no contiene la hoja 'NOMBRE'");
+          return;
+        }
+
+        const worksheet = workbook.Sheets[sheetName];
+
+        // Obtener celda A9
+        const cellA9 = worksheet["A9"];
+        if (!cellA9) {
+          alert("Error: No se encontró la celda A9 en la hoja NOMBRE");
+          return;
+        }
+
+        setAdminParams((prev) => ({
+          ...prev,
+          version: cellA9.v.toString(),
+        }));
+      } catch (error) {
+        console.error("Error al leer el archivo:", error);
+        alert("Error procesando el archivo. Verifica el formato.");
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
+
+  const subirArchivo = async () => {
+    if (!archivo) {
+        alert("Debe seleccionar un archivo");
+        return;
+    }
+
+    if (!adminParams.serie) {
+        alert("Debe seleccionar una serie antes de subir el archivo");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("archivo", archivo);
+    formData.append("serie", adminParams.serie);  // Aseguramos que se envíe la serie
+
+    try {
+        const response = await fetch(`${API_URL}/upload/upload-xlsm`, {
+            method: "POST",
+            body: formData,
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || "Error al subir el archivo");
+        }
+
+        const data = await response.json();
+        alert(`Archivo subido con éxito. Versión detectada: ${data.version}`);
+
+        // Actualizar la versión en el estado
+        setAdminParams((prev) => ({ ...prev, version: data.version }));
+    } catch (error) {
+        console.error("Error al subir archivo:", error);
+        alert("Error al subir el archivo");
+    }
+};
+
 
   // Agregar un nuevo usuario
   const agregarUsuario = async () => {
@@ -84,7 +162,6 @@ const AdministradorRem = () => {
     }
   };
 
-  // Eliminar un usuario
   const eliminarUsuario = async (id) => {
     if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return;
     try {
@@ -100,42 +177,10 @@ const AdministradorRem = () => {
     }
   };
 
-  // Modificar la versión de un parámetro existente
-  const modificarParametro = async () => {
-    console.log("Enviando datos:", adminParams);
-    try {
-      const response = await fetch(`${API_URL}/auth/admin/params`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adminParams),
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        console.error("Error en la respuesta:", error);
-        throw new Error("Error al modificar el parámetro");
-      }
-
-      const data = await response.json();
-      alert("Parámetro actualizado con éxito: " + data.message);
-
-      // Actualizar lista de parámetros en el estado con los datos recibidos
-      if (data.parametros) {
-        setParametros(data.parametros); // Actualizar la lista en el frontend
-      }
-    } catch (error) {
-      console.error("Error al modificar parámetro desde React:", error);
-      alert("Error al modificar el parámetro");
-    }
-  };
-
   return (
     <div className="container-informes">
       <h1>Panel de Administración</h1>
 
-      {/* Modificar Parámetros de administrador_rem */}
       <section>
         <h2>Modificar Parámetros del Administrador</h2>
         <div className="form-grid">
@@ -151,26 +196,29 @@ const AdministradorRem = () => {
             <option value="SERIE D">SERIE D</option>
             <option value="SERIE P">SERIE P</option>
           </select>
-          <input
-            name="version"
-            placeholder="Nueva Versión"
-            value={adminParams.version}
-            onChange={handleAdminParamsChange}
-          />
-          <button onClick={modificarParametro}>Modificar Parámetro</button>
-        </div>
 
-        <h3>Lista de Parámetros</h3>
-        <ul>
-          {parametros.map((param, index) => (
-            <li key={index}>
-              {param.serie} - {param.version}
-            </li>
-          ))}
-        </ul>
+          <div className="file-upload-container">
+            <input
+              type="file"
+              accept=".xlsm"
+              onChange={handleFileChange}
+              id="xlsm-upload"
+              className="custom-file-input"
+            />
+            <label htmlFor="xlsm-upload" className="file-upload-label">
+              Seleccionar Archivo .xlsm
+            </label>
+            {adminParams.version && (
+              <div className="version-display">
+                Versión detectada: {adminParams.version}
+              </div>
+            )}
+          </div>
+
+          <button onClick={subirArchivo}>Subir Archivo</button>
+        </div>
       </section>
 
-      {/* Agregar Usuario */}
       <section>
         <h2>Agregar Usuario</h2>
         <form>
@@ -211,7 +259,6 @@ const AdministradorRem = () => {
         </form>
       </section>
 
-      {/* Listado de Usuarios */}
       <section>
         <h2>Lista de Usuarios</h2>
         <table>
@@ -221,7 +268,6 @@ const AdministradorRem = () => {
               <th>Establecimiento</th>
               <th>Nombre</th>
               <th>Email</th>
-              <th>Fecha Creación</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -232,12 +278,8 @@ const AdministradorRem = () => {
                 <td>{usuario.establecimiento}</td>
                 <td>{usuario.nombre}</td>
                 <td>{usuario.email}</td>
-                <td>{new Date(usuario.fecha_creacion).toLocaleString()}</td>
                 <td>
-                  <button
-                    onClick={() => eliminarUsuario(usuario.id)}
-                    className="btn-eliminar"
-                  >
+                  <button onClick={() => eliminarUsuario(usuario.id)}>
                     Eliminar
                   </button>
                 </td>
@@ -251,3 +293,7 @@ const AdministradorRem = () => {
 };
 
 export default AdministradorRem;
+
+
+
+

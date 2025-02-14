@@ -104,3 +104,35 @@
     text-align: center;
   }
   
+  /* Estilos para la carga de archivos */
+.custom-file-input {
+  display: none;
+}
+
+.file-upload-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+  background-color: #45a049;
+}
+
+.version-display {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  color: #333;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
