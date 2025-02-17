@@ -79,10 +79,10 @@ const quienesSomosData = [
     {
         id: 8,
         nombre: 'Carlos Vielma',
-        cargo: 'Departamento de Información Sanitaria',
-        titulo: 'Secretaría y soporte administrativo',
+        cargo: 'Unidad análisis de información en Salud',
+        titulo: 'Geógrafo',
 
-        imgSrc: 'public/img/quienes_somos/gato4.jpg',
+        imgSrc: 'public/img/quienes_somos/CARLOS.jpg',
 
     },
     // Agrega más objetos según lo necesites
