@@ -6,6 +6,7 @@
   --background-color: #ffffff;
   --text-color: #000000;
   --card-background: #f8f9fa;
+  --quienes-somos-text: #004085; /* Azul oscuro para modo claro */
   --font-family: 'Poppins', sans-serif;
 }
 
@@ -14,6 +15,7 @@
   --background-color: #121212;
   --text-color: #ffffff;
   --card-background: #1e1e1e;
+  --quienes-somos-text: #ffffff;; /* Azul oscuro para modo claro */
 }
 
 /* Aplicar variables */
