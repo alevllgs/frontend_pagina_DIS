@@ -24,7 +24,7 @@ const Home = () => {
       <CreaBanner />
       <div className="cuerpo">
      
-        <h2>Información disponible</h2>
+        <h1>Información disponible</h1>
         <ButtonGroup />
       </div>
       <Footer />

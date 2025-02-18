@@ -19,7 +19,7 @@ const VisorTerritorial = () => {
             iconColor="#ff6b6b"
           />
           <Button
-            href="https://esri-minsal.maps.arcgis.com/apps/webappviewer/index.html?id=835a6b6a96d74d3fbe1bd78d4cf7e81c"
+            href="https://experience.arcgis.com/experience/404c81cb095744b8818526fbd6f82334"
             icon="fa-people-group"
             title="Visor Inscritos APS"
             delay="200"

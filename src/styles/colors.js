@@ -1,7 +1,14 @@
 // Definición de múltiples paletas de colores
 const colorPalettes = [
- 
-    ["#f94144", "#f3722c", "#f8961e", "#f9844a", "#f9c74f"]
+
+    [
+        "#e63946",
+        "#f95749",
+        "#f96a4f",
+        "#f9833c",
+        "#fad05f",
+        "#faf2a0"
+    ]
 ];
 
 export default colorPalettes;

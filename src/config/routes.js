@@ -19,9 +19,11 @@ export const routes = {
   produccionHospitalaria: "/produccion_hospitalaria",
   urgencia: "/urgencia",
   gestionClinicaFinanciera: "/gestion_clinica_financiera",
+  gestionAdmPacientes: "/gestion_adm_pacientes",
   estadisticasVitales: "/estadisticas_vitales",
   inmunizacion: "/inmunizacion",
   visorTerritorial: "/visor_territorial",
+  mapasDerivacion: "/mapas_derivacion",
   controlGestion: "/control_gestion",
   linksInteres: "/links_interes",
 

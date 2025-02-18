@@ -42,13 +42,14 @@
 }
 
 .navbar-logo-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #ffffff;
 }
 
 /* Enlaces del navbar */
 .navbar-links {
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 15px;

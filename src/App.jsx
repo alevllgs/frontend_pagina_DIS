@@ -13,9 +13,11 @@ import Urgencia from "./pages/Urgencia";
 import ListaEspera from "./pages/ListaEspera"; // Página REM
 import Comges from "./pages/Comges";
 import GestionClinicaFinanciera from "./pages/GestionClinicaFinanciera";
+import GestionAdmPacientes from "./pages/GestionAdmPacientes";
 import Inmunizacion from "./pages/Inmunizacion"; // Página GES
 import EstadisticasVitales from "./pages/EstadisticasVitales"; // Página GES
 import VisorTerritorial from "./pages/VisorTerritorial"; // Página GES
+import MapasDerivacion from "./pages/MapasDerivacion"; // Página GES
 import ControlGestion from "./pages/ControlGestion"; // Página GESTION
 import LinksInteres from "./pages/LinksInteres";
 
@@ -54,44 +56,27 @@ const App = () => {
         <Route path={routes.rem} element={<Rem />} />
         <Route path={routes.listaEspera} element={<ListaEspera />} />
         <Route path={routes.actividadesAps} element={<ActividadesAps />} />
-        <Route
-          path={routes.produccionHospitalaria}
-          element={<ProduccionHospitalaria />}
-        />
+        <Route path={routes.produccionHospitalaria} element={<ProduccionHospitalaria />}/>
         <Route path={routes.urgencia} element={<Urgencia />} />
         <Route path={routes.comges} element={<Comges />} />
-        <Route
-          path={routes.gestionClinicaFinanciera}
-          element={<GestionClinicaFinanciera />}
-        />
+        <Route path={routes.gestionClinicaFinanciera} element={<GestionClinicaFinanciera />}/>
+        <Route path={routes.gestionAdmPacientes} element={<GestionAdmPacientes />}/>
         <Route path={routes.controlGestion} element={<ControlGestion />} />
         <Route path={routes.visorTerritorial} element={<VisorTerritorial />} />
+        <Route path={routes.mapasDerivacion} element={<MapasDerivacion />} />
         <Route path={routes.inmunizacion} element={<Inmunizacion />} />
-        <Route
-          path={routes.estadisticasVitales}
-          element={<EstadisticasVitales />}
-        />
+        <Route path={routes.estadisticasVitales} element={<EstadisticasVitales />}/>
 
         {/* Rutas para Registro con redirección específica */}
-        <Route
-          path={routes.remLogin}
-          element={<Registro redirectTo={routes.subirRem} />}
-        />
-        <Route
-          path={routes.gesLogin}
-          element={<Registro redirectTo={routes.gesProtegido} />}
-        />
+        <Route path={routes.remLogin} element={<Registro redirectTo={routes.subirRem} />} />
+        <Route path={routes.gesLogin} element={<Registro redirectTo={routes.gesProtegido} />} />
 
         {/* Nueva ruta para AdminLogin */}
         <Route path={routes.adminLogin} element={<AdminLogin />} />
 
         {/* Rutas protegidas con roles específicos */}
-        <Route
-          path={routes.subirRem}
-          element={
-            <ProtectedRoute
-              allowedRoles={["administrador", "dashboard", "usuario"]}
-            >
+        <Route path={routes.subirRem} element={
+            <ProtectedRoute allowedRoles={["administrador", "dashboard", "usuario"]} >
               <SubirRem />
             </ProtectedRoute>
           }
