@@ -16,28 +16,24 @@ const VisorTerritorial = () => {
             icon="fa-map-location-dot"
             title="Visor Límites de Establecimientos APS"
             delay="100"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://experience.arcgis.com/experience/404c81cb095744b8818526fbd6f82334"
             icon="fa-people-group"
             title="Visor Inscritos APS"
             delay="200"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://esri-minsal.maps.arcgis.com/apps/webappviewer/index.html?id=1ecd5354571c4795937164263379267d"
             icon="fa-route"
             title="Visor de Análisis de Distancias a Establecimientos de Salud"
             delay="300"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://esri-minsal.maps.arcgis.com/apps/webappviewer/index.html?id=9d0de04cda6c4d4c93ebdb4a94c7f9b3"
             icon="fa-ribbon"
             title="Georreferenciación Cáncer de Mamas"
             delay="300"
-            iconColor="#ff6b6b"
           />
 
           {/* Botón con Material UI Icon */}

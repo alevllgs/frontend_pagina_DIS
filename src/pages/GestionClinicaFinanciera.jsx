@@ -16,7 +16,6 @@ const GestionClinicaFinanciera = () => {
             icon="fa-circle-dollar-to-slot"
             title="Gestión clínica financiera (mensual)"
             delay="100"
-            iconColor="#ff6b6b"
           />
       
         </div>
@@ -28,7 +27,6 @@ const GestionClinicaFinanciera = () => {
             icon="fa-list-check"
             title="Validador SIGCOM"
             delay="300"
-            iconColor="#ff6b6b"
           />
         </div>
       </div>

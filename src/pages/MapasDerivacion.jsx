@@ -16,14 +16,12 @@ const MapasDerivacion = () => {
             icon="fa-hourglass-end"
             title="Mapas de derivación"
             delay="100"
-            iconColor="#ff6b6b"
           />
            <Button
             href="/pagina_sigges/protocolos_ges.html"
             icon="fa-person-walking-arrow-right"
             title="Mapa derivación GES (flujo)"
             delay="300"
-            iconColor="#ff6b6b"
           />
       
         </div>

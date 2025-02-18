@@ -16,7 +16,6 @@ const Urgencia = () => {
             icon="coronavirus"
             title="Campaña de Invierno"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -24,7 +23,6 @@ const Urgencia = () => {
             icon="emergency"
             title="Atenciones Diarias de Urgencia"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
     

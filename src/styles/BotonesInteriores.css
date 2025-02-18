@@ -16,6 +16,9 @@
 :root {
   --valor-gradiente: var(--gradient-1);
   --valor-gradiente-inv: var(--gradient-inv-1);
+
+  --valor-gradiente_int: var(--gradient-2);
+  --valor-gradiente-inv_int: var(--gradient-inv-2);
   
   --gradient-1: linear-gradient(135deg, #6f86d6, #48c6ef);
   --gradient-2: linear-gradient(135deg, #ff6b6b, #ffcc00);
@@ -37,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  background: var(--valor-gradiente);
+  background: var(--valor-gradiente_int);
   border-radius: 15px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   width: 160px;
@@ -50,7 +53,7 @@
 
 /* Estilo para el hover de los botones dentro de .buttons */
 .buttons_int .button:hover {
-  background: var(--valor-gradiente-inv); /* Cambiar el degradado al pasar el mouse */
+  background: var(--valor-gradiente-inv_int); /* Cambiar el degradado al pasar el mouse */
   transform: scale(1.05); /* Aumentar ligeramente el tamaño */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el mouse */
 }
@@ -58,7 +61,7 @@
 /* Estilos para el ícono dentro de los botones dentro de .buttons */
 .buttons_int .icon {
   font-size: 65px; /* Tamaño del ícono */
-  color: #ffffff; /* Color del ícono */
+  color: #0072ff; /* Color del ícono */
 
   -webkit-text-stroke: 1px #444; /* Contorno negro de 2px */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra con leve desenfoque */

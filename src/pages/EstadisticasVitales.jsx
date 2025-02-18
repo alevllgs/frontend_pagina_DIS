@@ -16,7 +16,6 @@ const EstadisticasVitales = () => {
             icon="fa-baby"
             title="Estadística de Natalidad"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={false} // Si es Google Icons
           />
         <Button
@@ -24,7 +23,6 @@ const EstadisticasVitales = () => {
             icon="fa-ribbon"
             title="Estadística de Mortalidad"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={false} // Si es Google Icons
           />
     

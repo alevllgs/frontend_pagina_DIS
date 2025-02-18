@@ -15,7 +15,6 @@ const ControlGestion = () => {
             icon="fa-chart-line"
             title="Indicadores de eficiencia de quirófanos electivos"
             delay="100"
-            iconColor="#ff6b6b"
           />
           
         </div>

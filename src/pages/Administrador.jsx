@@ -18,7 +18,6 @@ const Administrador = () => {
             icon="manage_accounts"
             title="Administración REM"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true}
           />
 
@@ -27,7 +26,6 @@ const Administrador = () => {
             icon="file_save"
             title="Informes REM"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true}
           />
 
@@ -36,7 +34,6 @@ const Administrador = () => {
             icon="settings"
             title="Administración Dashboard"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true}
           />
         </div>

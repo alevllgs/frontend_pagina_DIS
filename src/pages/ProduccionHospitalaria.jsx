@@ -16,7 +16,6 @@ const ProduccionHospitalaria = () => {
             icon="short_stay"
             title="Ocupación de Camas UGCC"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -24,7 +23,6 @@ const ProduccionHospitalaria = () => {
             icon="moving_beds"
             title="Estadísticas Hospitalarias (IEEH)"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -32,7 +30,6 @@ const ProduccionHospitalaria = () => {
             icon="medical_services"
             title="Actividad Hospitalaria (REM)"
             delay="200"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
       

@@ -16,7 +16,6 @@ const ActividadesAps = () => {
             icon="clinical_notes"
             title="Monitoreo IAAPS"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -24,7 +23,6 @@ const ActividadesAps = () => {
             icon="flowsheet"
             title="Metas Sanitarias APS"
             delay="200"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -32,7 +30,6 @@ const ActividadesAps = () => {
             icon="patient_list"
             title="Programa Atencion Domiciliaria a Personas con Dependencia Severa"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -40,7 +37,6 @@ const ActividadesAps = () => {
             icon="ambulance"
             title="Programa SAPU"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -48,7 +44,6 @@ const ActividadesAps = () => {
             icon="radiology"
             title="Programa SAR"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
              <Button
@@ -56,7 +51,6 @@ const ActividadesAps = () => {
             icon="fa-prescription-bottle-medical"
             title="Farmacia"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={false} // Si es Google Icons
           />
 

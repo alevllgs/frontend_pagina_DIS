@@ -16,21 +16,18 @@ const GestionAdmPacientes = () => {
             icon="fa-hourglass-end"
             title="Garantías Retrasadas GES (bimensual)"
             delay="100"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiY2Y4Njk4ZDgtY2E5My00NGM0LWFiODEtMzBkZWIzNTZhY2QyIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-clock"
             title="Cumplimiento de Garantías GES (mensual)"
             delay="200"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://app.powerbi.com/view?r=eyJrIjoiMjFiODE0YzUtOThmNC00MmNiLWJmNTQtMGNmZGYxNDQyM2JkIiwidCI6IjA2MDc0N2E5LTk5YjYtNDg4NS1hNmQxLWI3ZDg1OGE4M2E1MyJ9"
             icon="fa-stopwatch"
             title="Garantías Exceptuadas Transitorias"
             delay="300"
-            iconColor="#ff6b6b"
           />
         </div>
 
@@ -41,7 +38,6 @@ const GestionAdmPacientes = () => {
             icon="fa-person-walking-arrow-right"
             title="Mapa derivación GES (flujo)"
             delay="300"
-            iconColor="#ff6b6b"
           />
         </div>
       </div>

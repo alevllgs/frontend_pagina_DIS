@@ -16,14 +16,12 @@ const Rem = () => {
             icon="fa-list"
             title="Repositorio REM [Intranet]"
             delay="100"
-            iconColor="#ff6b6b"
           />
           <Button
             href="https://dis.saludoriente.cl/degidssmo/remonline"
             icon="fa-table-list"
             title="Visualizador REM"
             delay="200"
-            iconColor="#ff6b6b"
           />
          
         </div>
@@ -35,7 +33,6 @@ const Rem = () => {
             icon="fa-file-import"
             title="Envio de REM"
             delay="300"
-            iconColor="#ff6b6b"
           />
         </div>
       </div>

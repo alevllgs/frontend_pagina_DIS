@@ -16,7 +16,6 @@ const Comges = () => {
             icon="clinical_notes"
             title="COMGES 1.1: Proceso Ambulatorio"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -24,7 +23,6 @@ const Comges = () => {
             icon="format_list_numbered"
             title="COMGES: Lista de Espera No GES"
             delay="200"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -32,7 +30,6 @@ const Comges = () => {
             icon="elderly_woman"
             title="COMGES 8.1: Acciones para el Cuidado Integral de Personas 65 años y más"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -40,7 +37,6 @@ const Comges = () => {
             icon="real_estate_agent"
             title="COMGES 8.2: Atencion Domiciliaria Dependencia Severa"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -48,7 +44,6 @@ const Comges = () => {
             icon="emergency"
             title="COMGES 9.2: Usuarios que abonan la Urgencia Hospitarlaria"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
 
@@ -57,7 +52,6 @@ const Comges = () => {
             icon="model_training"
             title="COMGES 10.1: Gestión y Eficiencia del Proceso de Hospitalización"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -65,7 +59,6 @@ const Comges = () => {
             icon="home_health"
             title="COMGES 10.3: Hospitalizacion Domiciliaria"
             delay="200"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -73,7 +66,6 @@ const Comges = () => {
             icon="Surgical"
             title="COMGES 11: Proceso Quirúrgico"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
  

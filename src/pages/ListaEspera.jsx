@@ -16,7 +16,6 @@ const ListaEspera = () => {
             icon="list"
             title="LE No GES"
             delay="100"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -24,7 +23,6 @@ const ListaEspera = () => {
             icon="monitoring"
             title="Evolución LE No GES"
             delay="200"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -32,7 +30,6 @@ const ListaEspera = () => {
             icon="oncology"
             title="LE NO GES Oncológíca"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
           <Button
@@ -40,7 +37,6 @@ const ListaEspera = () => {
             icon="move_item"
             title="Egresos Lista de Espera No GES [Proximamente]"
             delay="300"
-            iconColor="#ff6b6b"
             isMaterialSymbol={true} // Si es Google Icons
           />
 

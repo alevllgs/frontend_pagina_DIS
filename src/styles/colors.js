@@ -1,6 +1,5 @@
 // Definición de múltiples paletas de colores
 const colorPalettes = [
-
     [
         "#e63946",
         "#f95749",
